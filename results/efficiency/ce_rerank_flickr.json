@@ -1,0 +1,21 @@
+{
+  "router_recall@1": 0.91,
+  "candidates@B=1": 149.0996,
+  "recall@1|B=1": 0.706,
+  "recall@5|B=1": 0.8682,
+  "recall@10|B=1": 0.89,
+  "router_recall@3": 0.9876,
+  "candidates@B=3": 346.4152,
+  "recall@1|B=3": 0.7438,
+  "recall@5|B=3": 0.926,
+  "recall@10|B=3": 0.9528,
+  "router_recall@5": 0.9972,
+  "candidates@B=5": 487.724,
+  "recall@1|B=5": 0.7468,
+  "recall@5|B=5": 0.9322,
+  "recall@10|B=5": 0.9592,
+  "n_queries": 5000,
+  "pool_size": 1000,
+  "multi_target": false,
+  "rerank_mode": "cross_encoder"
+}

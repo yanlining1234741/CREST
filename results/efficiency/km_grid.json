@@ -1,0 +1,43 @@
+{
+  "rows": [
+    {
+      "K": 64,
+      "M": 2,
+      "rR@1": 0.7042,
+      "R@1": 0.575
+    },
+    {
+      "K": 64,
+      "M": 4,
+      "rR@1": 0.8304,
+      "R@1": 0.6662
+    },
+    {
+      "K": 64,
+      "M": 6,
+      "rR@1": 0.8812,
+      "R@1": 0.703
+    },
+    {
+      "K": 64,
+      "M": 1,
+      "rR@1": 0.682,
+      "R@1": 0.564,
+      "source": "legacy_paper"
+    },
+    {
+      "K": 64,
+      "M": 8,
+      "rR@1": 0.91,
+      "R@1": 0.7208,
+      "source": "../mbeir_aligned/outputs/flickr/eval_K64_M8_cosine.json"
+    },
+    {
+      "K": 8,
+      "M": 8,
+      "rR@1": 1.0,
+      "R@1": 0.7648,
+      "source": "/sda/yxyang/qsba_workspace/lnyan-experiment/work/km_K8_M8"
+    }
+  ]
+}

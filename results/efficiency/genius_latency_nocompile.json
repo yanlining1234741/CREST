@@ -1,0 +1,28 @@
+{
+  "mean_ms": 170.0327,
+  "std_ms": 9.0629,
+  "p50_ms": 166.2817,
+  "p95_ms": 186.8558,
+  "queries_per_sec": 5.8812,
+  "num_beams": 50,
+  "n_measured": 500,
+  "note": "measured_t5small_50beam_preextracted_emb_VN_task3",
+  "warmup": 50,
+  "n_measure": 500,
+  "torch_compile": false,
+  "stage_profile": {
+    "rq_ms": 8.2143,
+    "projector_ms": 0.2808,
+    "beamsearch_ms": 161.0804,
+    "total_ms": 169.5755,
+    "rq_pct": 4.8,
+    "projector_pct": 0.2,
+    "beamsearch_pct": 95.0,
+    "n_profiled": 20
+  },
+  "profile": {
+    "rq_ms": 8.2143,
+    "projector_ms": 0.2808,
+    "beamsearch_ms": 161.0804
+  }
+}

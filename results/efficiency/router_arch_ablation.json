@@ -1,0 +1,56 @@
+{
+  "dataset": "mscoco",
+  "K": 128,
+  "M": 8,
+  "epochs": 60,
+  "rows": [
+    {
+      "config": {
+        "name": "L1_h512",
+        "n_layers": 1,
+        "hidden_dim": 512
+      },
+      "n_params": 98432,
+      "router_recall@1": 0.9459067273973155,
+      "R@1": 0.5290418799629166,
+      "R@5": 0.7708895965173929,
+      "checkpoint": "/sda/yxyang/qsba_workspace/lnyan-experiment/work/router_arch_L1_h512.pt"
+    },
+    {
+      "config": {
+        "name": "L2_h256",
+        "n_layers": 2,
+        "hidden_dim": 256
+      },
+      "n_params": 230272,
+      "router_recall@1": 0.9596920472409206,
+      "R@1": 0.5348059172074651,
+      "R@5": 0.7812084324237172,
+      "checkpoint": "/sda/yxyang/qsba_workspace/lnyan-experiment/work/router_arch_L2_h256.pt"
+    },
+    {
+      "config": {
+        "name": "L2_h512",
+        "n_layers": 2,
+        "hidden_dim": 512
+      },
+      "n_params": 460416,
+      "router_recall@1": 0.9611431335402475,
+      "R@1": 0.5360957716957556,
+      "R@5": 0.7824579789592486,
+      "checkpoint": "/sda/yxyang/qsba_workspace/lnyan-experiment/work/router_arch_L2_h512.pt"
+    },
+    {
+      "config": {
+        "name": "L2_h1024",
+        "n_layers": 2,
+        "hidden_dim": 1024
+      },
+      "n_params": 920704,
+      "router_recall@1": 0.9686404127534363,
+      "R@1": 0.5387560965778548,
+      "R@5": 0.7872949332903382,
+      "checkpoint": "/sda/yxyang/qsba_workspace/lnyan-experiment/work/router_arch_L2_h1024.pt"
+    }
+  ]
+}

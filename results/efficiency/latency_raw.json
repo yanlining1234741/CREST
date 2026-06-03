@@ -1,0 +1,192 @@
+{
+  "_meta": {
+    "device": "cuda",
+    "warmup": 50,
+    "n_measure": 500,
+    "batch32": 32,
+    "mbeir_root": "/sda/yxyang/qsba_workspace/mbeir_aligned"
+  },
+  "flickr": {
+    "corpus_size": 1000,
+    "clip_bruteforce": {
+      "mean_ms": 0.1446,
+      "std_ms": 0.0053,
+      "p50_ms": 0.1434,
+      "p95_ms": 0.1526,
+      "queries_per_sec": 6917.647,
+      "n": 500,
+      "batch32_qps": 65638.3315
+    },
+    "qsba_router": {
+      "mean_ms": 0.1496,
+      "std_ms": 0.0097,
+      "p50_ms": 0.1454,
+      "p95_ms": 0.1751,
+      "queries_per_sec": 6685.6274,
+      "n": 500,
+      "batch32_qps": 113468.7357
+    },
+    "qsba_router_ce": {
+      "mean_ms": 1.1793,
+      "std_ms": 0.1024,
+      "p50_ms": 1.1853,
+      "p95_ms": 1.3261,
+      "queries_per_sec": 847.9563,
+      "n": 500,
+      "batch32_qps": 1021.9431
+    },
+    "genius_estimated_backup": {
+      "mean_ms": 45.0,
+      "note": "estimated_from_paper_50beam_T5small"
+    },
+    "genius_measured": {
+      "mean_ms": 162.0136,
+      "std_ms": 8.2973,
+      "p50_ms": 158.8731,
+      "p95_ms": 176.8556,
+      "queries_per_sec": 6.1723,
+      "num_beams": 50,
+      "n_measured": 500,
+      "note": "measured_t5small_50beam_preextracted_emb_VN_task3",
+      "warmup": 50,
+      "n_measure": 500,
+      "stage_profile": {
+        "rq_ms": 7.3117,
+        "projector_ms": 0.2512,
+        "beamsearch_ms": 148.9993,
+        "total_ms": 156.5622,
+        "rq_pct": 4.7,
+        "projector_pct": 0.2,
+        "beamsearch_pct": 95.2,
+        "n_profiled": 20
+      },
+      "profile": {
+        "rq_ms": 7.3117,
+        "projector_ms": 0.2512,
+        "beamsearch_ms": 148.9993
+      }
+    }
+  },
+  "mscoco": {
+    "corpus_size": 5000,
+    "clip_bruteforce": {
+      "mean_ms": 0.1801,
+      "std_ms": 0.0126,
+      "p50_ms": 0.1731,
+      "p95_ms": 0.2048,
+      "queries_per_sec": 5553.3895,
+      "n": 500,
+      "batch32_qps": 21454.6228
+    },
+    "qsba_router": {
+      "mean_ms": 0.1513,
+      "std_ms": 0.0102,
+      "p50_ms": 0.1505,
+      "p95_ms": 0.1752,
+      "queries_per_sec": 6608.7996,
+      "n": 500,
+      "batch32_qps": 135482.9952
+    },
+    "qsba_router_ce": {
+      "mean_ms": 1.4182,
+      "std_ms": 0.3174,
+      "p50_ms": 1.3338,
+      "p95_ms": 2.0713,
+      "queries_per_sec": 705.1146,
+      "n": 500,
+      "batch32_qps": 864.0234
+    },
+    "genius_estimated_backup": {
+      "mean_ms": 45.0,
+      "note": "estimated_from_paper_50beam_T5small"
+    },
+    "genius_measured": {
+      "mean_ms": 162.0136,
+      "std_ms": 8.2973,
+      "p50_ms": 158.8731,
+      "p95_ms": 176.8556,
+      "queries_per_sec": 6.1723,
+      "num_beams": 50,
+      "n_measured": 500,
+      "note": "measured_t5small_50beam_preextracted_emb_VN_task3",
+      "warmup": 50,
+      "n_measure": 500,
+      "stage_profile": {
+        "rq_ms": 7.3117,
+        "projector_ms": 0.2512,
+        "beamsearch_ms": 148.9993,
+        "total_ms": 156.5622,
+        "rq_pct": 4.7,
+        "projector_pct": 0.2,
+        "beamsearch_pct": 95.2,
+        "n_profiled": 20
+      },
+      "profile": {
+        "rq_ms": 7.3117,
+        "projector_ms": 0.2512,
+        "beamsearch_ms": 148.9993
+      }
+    }
+  },
+  "visualnews": {
+    "corpus_size": 537568,
+    "clip_bruteforce": {
+      "mean_ms": 2.2603,
+      "std_ms": 0.0663,
+      "p50_ms": 2.2548,
+      "p95_ms": 2.2743,
+      "queries_per_sec": 442.4238,
+      "n": 500,
+      "batch32_qps": 3150.5689
+    },
+    "qsba_router": {
+      "mean_ms": 0.1503,
+      "std_ms": 0.011,
+      "p50_ms": 0.1464,
+      "p95_ms": 0.1761,
+      "queries_per_sec": 6654.8434,
+      "n": 500,
+      "batch32_qps": 124300.8076
+    },
+    "qsba_router_ce": {
+      "mean_ms": 12.1081,
+      "std_ms": 4.9118,
+      "p50_ms": 11.1258,
+      "p95_ms": 20.9014,
+      "queries_per_sec": 82.5893,
+      "n": 500,
+      "batch32_qps": 91.3024
+    },
+    "genius_estimated_backup": {
+      "mean_ms": 45.0,
+      "note": "estimated_from_paper_50beam_T5small"
+    },
+    "genius_measured": {
+      "mean_ms": 162.0136,
+      "std_ms": 8.2973,
+      "p50_ms": 158.8731,
+      "p95_ms": 176.8556,
+      "queries_per_sec": 6.1723,
+      "num_beams": 50,
+      "n_measured": 500,
+      "note": "measured_t5small_50beam_preextracted_emb_VN_task3",
+      "warmup": 50,
+      "n_measure": 500,
+      "stage_profile": {
+        "rq_ms": 7.3117,
+        "projector_ms": 0.2512,
+        "beamsearch_ms": 148.9993,
+        "total_ms": 156.5622,
+        "rq_pct": 4.7,
+        "projector_pct": 0.2,
+        "beamsearch_pct": 95.2,
+        "n_profiled": 20
+      },
+      "profile": {
+        "rq_ms": 7.3117,
+        "projector_ms": 0.2512,
+        "beamsearch_ms": 148.9993
+      }
+    }
+  }
+}

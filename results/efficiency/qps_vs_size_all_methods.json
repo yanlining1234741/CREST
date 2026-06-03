@@ -1,0 +1,456 @@
+{
+  "dataset": "visualnews_task3",
+  "clip": [
+    {
+      "N_k": 1,
+      "N": 1000,
+      "mean_ms": 0.0939,
+      "std_ms": 0.0067,
+      "p95_ms": 0.1035,
+      "qps": 10645.2556
+    },
+    {
+      "N_k": 5,
+      "N": 5000,
+      "mean_ms": 0.1022,
+      "std_ms": 0.0059,
+      "p95_ms": 0.1126,
+      "qps": 9786.4825
+    },
+    {
+      "N_k": 10,
+      "N": 10000,
+      "mean_ms": 0.1535,
+      "std_ms": 0.0114,
+      "p95_ms": 0.1731,
+      "qps": 6513.0536
+    },
+    {
+      "N_k": 25,
+      "N": 25000,
+      "mean_ms": 0.2052,
+      "std_ms": 0.026,
+      "p95_ms": 0.2725,
+      "qps": 4872.3775
+    },
+    {
+      "N_k": 50,
+      "N": 50000,
+      "mean_ms": 0.2924,
+      "std_ms": 0.0127,
+      "p95_ms": 0.3011,
+      "qps": 3419.8716
+    },
+    {
+      "N_k": 100,
+      "N": 100000,
+      "mean_ms": 0.4842,
+      "std_ms": 0.0107,
+      "p95_ms": 0.5132,
+      "qps": 2065.2868
+    },
+    {
+      "N_k": 150,
+      "N": 120000,
+      "mean_ms": 0.5662,
+      "std_ms": 0.0224,
+      "p95_ms": 0.5796,
+      "qps": 1766.2253
+    },
+    {
+      "N_k": 200,
+      "N": 120000,
+      "mean_ms": 0.5673,
+      "std_ms": 0.0323,
+      "p95_ms": 0.5888,
+      "qps": 1762.7462
+    },
+    {
+      "N_k": 250,
+      "N": 120000,
+      "mean_ms": 0.5655,
+      "std_ms": 0.019,
+      "p95_ms": 0.5901,
+      "qps": 1768.4158
+    },
+    {
+      "N_k": 300,
+      "N": 120000,
+      "mean_ms": 0.5663,
+      "std_ms": 0.0232,
+      "p95_ms": 0.5975,
+      "qps": 1765.9954
+    },
+    {
+      "N_k": 400,
+      "N": 120000,
+      "mean_ms": 0.5947,
+      "std_ms": 0.3354,
+      "p95_ms": 0.5939,
+      "qps": 1681.6587
+    },
+    {
+      "N_k": 537,
+      "N": 120000,
+      "mean_ms": 0.7391,
+      "std_ms": 0.931,
+      "p95_ms": 0.722,
+      "qps": 1353.0255
+    }
+  ],
+  "clip_sf": [
+    {
+      "N_k": 1,
+      "N": 1000,
+      "mean_ms": 0.0939,
+      "std_ms": 0.0067,
+      "p95_ms": 0.1035,
+      "qps": 10645.2556,
+      "method": "CLIP-SF",
+      "dataset": "VN task3"
+    },
+    {
+      "N_k": 5,
+      "N": 5000,
+      "mean_ms": 0.1022,
+      "std_ms": 0.0059,
+      "p95_ms": 0.1126,
+      "qps": 9786.4825,
+      "method": "CLIP-SF",
+      "dataset": "VN task3"
+    },
+    {
+      "N_k": 10,
+      "N": 10000,
+      "mean_ms": 0.1535,
+      "std_ms": 0.0114,
+      "p95_ms": 0.1731,
+      "qps": 6513.0536,
+      "method": "CLIP-SF",
+      "dataset": "VN task3"
+    },
+    {
+      "N_k": 25,
+      "N": 25000,
+      "mean_ms": 0.2052,
+      "std_ms": 0.026,
+      "p95_ms": 0.2725,
+      "qps": 4872.3775,
+      "method": "CLIP-SF",
+      "dataset": "VN task3"
+    },
+    {
+      "N_k": 50,
+      "N": 50000,
+      "mean_ms": 0.2924,
+      "std_ms": 0.0127,
+      "p95_ms": 0.3011,
+      "qps": 3419.8716,
+      "method": "CLIP-SF",
+      "dataset": "VN task3"
+    },
+    {
+      "N_k": 100,
+      "N": 100000,
+      "mean_ms": 0.4842,
+      "std_ms": 0.0107,
+      "p95_ms": 0.5132,
+      "qps": 2065.2868,
+      "method": "CLIP-SF",
+      "dataset": "VN task3"
+    },
+    {
+      "N_k": 150,
+      "N": 120000,
+      "mean_ms": 0.5662,
+      "std_ms": 0.0224,
+      "p95_ms": 0.5796,
+      "qps": 1766.2253,
+      "method": "CLIP-SF",
+      "dataset": "VN task3"
+    },
+    {
+      "N_k": 200,
+      "N": 120000,
+      "mean_ms": 0.5673,
+      "std_ms": 0.0323,
+      "p95_ms": 0.5888,
+      "qps": 1762.7462,
+      "method": "CLIP-SF",
+      "dataset": "VN task3"
+    },
+    {
+      "N_k": 250,
+      "N": 120000,
+      "mean_ms": 0.5655,
+      "std_ms": 0.019,
+      "p95_ms": 0.5901,
+      "qps": 1768.4158,
+      "method": "CLIP-SF",
+      "dataset": "VN task3"
+    },
+    {
+      "N_k": 300,
+      "N": 120000,
+      "mean_ms": 0.5663,
+      "std_ms": 0.0232,
+      "p95_ms": 0.5975,
+      "qps": 1765.9954,
+      "method": "CLIP-SF",
+      "dataset": "VN task3"
+    },
+    {
+      "N_k": 400,
+      "N": 120000,
+      "mean_ms": 0.5947,
+      "std_ms": 0.3354,
+      "p95_ms": 0.5939,
+      "qps": 1681.6587,
+      "method": "CLIP-SF",
+      "dataset": "VN task3"
+    },
+    {
+      "N_k": 537,
+      "N": 120000,
+      "mean_ms": 0.7391,
+      "std_ms": 0.931,
+      "p95_ms": 0.722,
+      "qps": 1353.0255,
+      "method": "CLIP-SF",
+      "dataset": "VN task3"
+    }
+  ],
+  "genius": [
+    {
+      "N_k": 1,
+      "qps": 6.1723,
+      "note": "VN measured"
+    },
+    {
+      "N_k": 5,
+      "qps": 6.1723,
+      "note": "VN measured"
+    },
+    {
+      "N_k": 10,
+      "qps": 6.1723,
+      "note": "VN measured"
+    },
+    {
+      "N_k": 25,
+      "qps": 6.1723,
+      "note": "VN measured"
+    },
+    {
+      "N_k": 50,
+      "qps": 6.1723,
+      "note": "VN measured"
+    },
+    {
+      "N_k": 100,
+      "qps": 6.1723,
+      "note": "VN measured"
+    },
+    {
+      "N_k": 150,
+      "qps": 6.1723,
+      "note": "VN measured"
+    },
+    {
+      "N_k": 200,
+      "qps": 6.1723,
+      "note": "VN measured"
+    },
+    {
+      "N_k": 250,
+      "qps": 6.1723,
+      "note": "VN measured"
+    },
+    {
+      "N_k": 300,
+      "qps": 6.1723,
+      "note": "VN measured"
+    },
+    {
+      "N_k": 400,
+      "qps": 6.1723,
+      "note": "VN measured"
+    },
+    {
+      "N_k": 537,
+      "qps": 6.1723,
+      "note": "VN measured"
+    }
+  ],
+  "genius_info": {
+    "mean_ms": 162.0136,
+    "std_ms": 8.2973,
+    "p95_ms": 176.8556,
+    "qps": 6.1723,
+    "dataset": "VN task3",
+    "source": "/sda/yxyang/qsba_workspace/lnyan-experiment/results/genius_latency_raw.json",
+    "note": "measured_t5small_50beam_preextracted_emb_VN_task3"
+  },
+  "qsba_ce": [
+    {
+      "N_k": 1,
+      "N": 11,
+      "mean_ms": 0.37113524998227754,
+      "qps": 2694.435519255452
+    },
+    {
+      "N_k": 5,
+      "N": 58,
+      "mean_ms": 0.8691278925041358,
+      "qps": 1150.5786531816334
+    },
+    {
+      "N_k": 10,
+      "N": 117,
+      "mean_ms": 0.7915981882313887,
+      "qps": 1263.2671661796353
+    },
+    {
+      "N_k": 25,
+      "N": 292,
+      "mean_ms": 0.5626993071039518,
+      "qps": 1777.1480920186425
+    },
+    {
+      "N_k": 50,
+      "N": 585,
+      "mean_ms": 0.7849720511833826,
+      "qps": 1273.9307068225582
+    },
+    {
+      "N_k": 100,
+      "N": 1171,
+      "mean_ms": 0.941166296005249,
+      "qps": 1062.5114862744967
+    },
+    {
+      "N_k": 150,
+      "N": 1757,
+      "mean_ms": 1.4791768634319304,
+      "qps": 676.051677606583
+    },
+    {
+      "N_k": 200,
+      "N": 2343,
+      "mean_ms": 1.9486407399177552,
+      "qps": 513.1782270149018
+    },
+    {
+      "N_k": 250,
+      "N": 2929,
+      "mean_ms": 1.9631986085573832,
+      "qps": 509.37281416210345
+    },
+    {
+      "N_k": 300,
+      "N": 3515,
+      "mean_ms": 2.0172443834940594,
+      "qps": 495.72575746519357
+    },
+    {
+      "N_k": 537,
+      "N": 6292,
+      "mean_ms": 5.30939433892568,
+      "qps": 188.34539990155324
+    }
+  ],
+  "grace": [
+    {
+      "N_k": 1,
+      "qps": 0.2153,
+      "note": "COCO measured (horizontal on VN plot)"
+    },
+    {
+      "N_k": 5,
+      "qps": 0.2153,
+      "note": "COCO measured (horizontal on VN plot)"
+    },
+    {
+      "N_k": 10,
+      "qps": 0.2153,
+      "note": "COCO measured (horizontal on VN plot)"
+    },
+    {
+      "N_k": 25,
+      "qps": 0.2153,
+      "note": "COCO measured (horizontal on VN plot)"
+    },
+    {
+      "N_k": 50,
+      "qps": 0.2153,
+      "note": "COCO measured (horizontal on VN plot)"
+    },
+    {
+      "N_k": 100,
+      "qps": 0.2153,
+      "note": "COCO measured (horizontal on VN plot)"
+    },
+    {
+      "N_k": 150,
+      "qps": 0.2153,
+      "note": "COCO measured (horizontal on VN plot)"
+    },
+    {
+      "N_k": 200,
+      "qps": 0.2153,
+      "note": "COCO measured (horizontal on VN plot)"
+    },
+    {
+      "N_k": 250,
+      "qps": 0.2153,
+      "note": "COCO measured (horizontal on VN plot)"
+    },
+    {
+      "N_k": 300,
+      "qps": 0.2153,
+      "note": "COCO measured (horizontal on VN plot)"
+    },
+    {
+      "N_k": 400,
+      "qps": 0.2153,
+      "note": "COCO measured (horizontal on VN plot)"
+    },
+    {
+      "N_k": 537,
+      "qps": 0.2153,
+      "note": "COCO measured (horizontal on VN plot)"
+    }
+  ],
+  "grace_info": {
+    "mean_ms": 4644.7953,
+    "std_ms": 442.1069,
+    "p95_ms": 5337.3126,
+    "qps": 0.2153,
+    "dataset": "coco",
+    "source": "/sda/yxyang/qsba_workspace/lnyan-experiment/results/grace_latency_raw.json",
+    "note": "COCO coco_automatic n=500"
+  },
+  "genius_orig": {
+    "qps": 19.0,
+    "note": "Kim et al. RTX3090"
+  },
+  "grace_orig": {
+    "qps": 5.0,
+    "note": "Kim et al. RTX3090"
+  },
+  "metadata": {
+    "hardware": "V100",
+    "batch": 1,
+    "warmup": 50,
+    "n_measure": 300,
+    "pool": "VN task3 text pool (image queries)",
+    "pool_path": "/sda/yxyang/qsba_workspace/mbeir_aligned/data/visualnews_task3/text_embeddings.pt",
+    "query_path": "/sda/yxyang/qsba_workspace/mbeir_aligned/data/visualnews_task3/image_embeddings.pt",
+    "qsba_source": "/sda/yxyang/qsba_workspace/lnyan-experiment/results/qps_vs_size_raw.json",
+    "genius_source": "/sda/yxyang/qsba_workspace/lnyan-experiment/results/genius_latency_raw.json",
+    "grace_source": "/sda/yxyang/qsba_workspace/lnyan-experiment/results/grace_latency_raw.json",
+    "grace_dataset": "coco",
+    "emb_precomputed": true,
+    "cuda_device": "1"
+  }
+}

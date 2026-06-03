@@ -1,0 +1,49 @@
+# QSBA 配置文件 - COCO + SigLIP2-SO400M
+
+# ========== 数据 ==========
+data:
+  # 你的预计算 embedding 文件路径,改成实际路径
+  image_emb_path: "/home/yxyang/claudenew/data_clipsf_v2/image_embeddings.pt"
+  text_emb_path: "/home/yxyang/claudenew/data_clipsf_v2/text_embeddings.pt"
+  embed_dim: 768                # SigLIP2-SO400M
+  device: "cuda"
+
+# ========== Stage 1: Query-Aware 表征 ==========
+query_aware:
+  alpha: 1.0                     # item 权重 (1-alpha 是 caption mean 权重)
+  l2_normalize: true             # 混合后是否重新 L2 归一化
+  output_path: "outputs/query_aware_emb.pt"
+
+# ========== Stage 2: Sinkhorn 桶分配 ==========
+sinkhorn:
+  K: 80                         # 桶数量
+  M: 12                           # multi-view: 每 item 分到几个桶 (1 = 单视角)
+  epsilon: 0.01                  # entropy regularization
+  n_sinkhorn_iters: 20            # 每次分配的 Sinkhorn 迭代数
+  n_em_iters: 30                 # EM 外循环次数 (centroid 更新)
+  init: "kmeans++"               # 初始化: kmeans++ 或 random
+  output_path: "outputs/assignment.pt"
+
+# ========== Stage 3: Router 训练 ==========
+router:
+  hidden_dim: 1024                # router MLP 隐层
+  n_layers: 3                    # router 层数
+  dropout: 0.1
+  lr: 0.001
+  weight_decay: 0.0001
+  batch_size: 256
+  epochs: 80
+  val_split: 0.1                 # 从训练 caption 抽 10% 作为 router val
+  output_path: "outputs/router.pt"
+
+# ========== 评估 ==========
+eval:
+  top_B: [1, 3, 5]       # 评估 router top-B recall
+  top_K: [1, 5, 10]              # end-to-end recall@K
+  candidate_pool_size: 5000      # 对齐 GENIUS 协议
+  rerank_with_dense: true        # 桶内用原始 embedding cos sim 精排
+
+# ========== 其他 ==========
+seed: 42
+log_level: "INFO"
+output_dir: "outputs_extra_K80_M12"

@@ -1,0 +1,61 @@
+{
+  "dataset": "mscoco",
+  "K": 128,
+  "M": 8,
+  "B": 1,
+  "rerank": "flat",
+  "rows": [
+    {
+      "alpha": 0.0,
+      "status": "ok",
+      "source": "/sda/yxyang/qsba_workspace/lnyan-experiment/work/mscoco_alpha_0_0",
+      "rR@1": 0.9668668628320367,
+      "candidates@B=1": 465.87847152243137,
+      "R@1": 0.5394010238220001,
+      "assignment": "/sda/yxyang/qsba_workspace/lnyan-experiment/work/mscoco_alpha_0_0/assignment_K128_M8.pt",
+      "router": "/sda/yxyang/qsba_workspace/lnyan-experiment/work/mscoco_alpha_0_0/router_K128.pt"
+    },
+    {
+      "alpha": 0.25,
+      "status": "ok",
+      "source": "/sda/yxyang/qsba_workspace/lnyan-experiment/work/mscoco_alpha_0_25",
+      "rR@1": 0.9668668628320367,
+      "candidates@B=1": 465.87847152243137,
+      "R@1": 0.5394010238220001,
+      "assignment": "/sda/yxyang/qsba_workspace/lnyan-experiment/work/mscoco_alpha_0_25/assignment_K128_M8.pt",
+      "router": "/sda/yxyang/qsba_workspace/lnyan-experiment/work/mscoco_alpha_0_25/router_K128.pt"
+    },
+    {
+      "alpha": 0.5,
+      "status": "ok",
+      "source": "/sda/yxyang/qsba_workspace/lnyan-experiment/work/mscoco_alpha_0_5",
+      "rR@1": 0.9668668628320367,
+      "candidates@B=1": 465.87847152243137,
+      "R@1": 0.5394010238220001,
+      "assignment": "/sda/yxyang/qsba_workspace/lnyan-experiment/work/mscoco_alpha_0_5/assignment_K128_M8.pt",
+      "router": "/sda/yxyang/qsba_workspace/lnyan-experiment/work/mscoco_alpha_0_5/router_K128.pt"
+    },
+    {
+      "alpha": 0.75,
+      "status": "ok",
+      "source": "/sda/yxyang/qsba_workspace/lnyan-experiment/work/mscoco_alpha_0_75",
+      "rR@1": 0.9668668628320367,
+      "candidates@B=1": 465.87847152243137,
+      "R@1": 0.5394010238220001,
+      "assignment": "/sda/yxyang/qsba_workspace/lnyan-experiment/work/mscoco_alpha_0_75/assignment_K128_M8.pt",
+      "router": "/sda/yxyang/qsba_workspace/lnyan-experiment/work/mscoco_alpha_0_75/router_K128.pt"
+    },
+    {
+      "alpha": 1.0,
+      "status": "ok",
+      "source": "/sda/yxyang/qsba_workspace/mbeir_aligned/outputs/mscoco",
+      "rR@1": 0.9638437663751058,
+      "candidates@B=1": 442.080817445282,
+      "R@1": 0.5363779273650692,
+      "assignment": "/sda/yxyang/qsba_workspace/mbeir_aligned/outputs/mscoco/assignment_K128_M8.pt",
+      "router": "/sda/yxyang/qsba_workspace/mbeir_aligned/outputs/mscoco/router_K128.pt"
+    }
+  ],
+  "missing_alphas": [],
+  "note": "Paper tab:alpha rR@1/Cand. rows may be from legacy K=32,M=6 sweep. This script targets mbeir K=128,M=8. Use --bootstrap to generate other alphas (alpha<1 needs caption linkage in Stage 1)."
+}

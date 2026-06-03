@@ -1,0 +1,133 @@
+{
+  "dataset": "visualnews_task3",
+  "dim": 768,
+  "index": "IVF-PQ",
+  "faiss_backend": "gpu",
+  "use_gpu_faiss": true,
+  "comparable_to_gpu_results": true,
+  "note": "GPU measurement (m=48; m=96 exceeds V100 shared-memory for 8-bit PQ).",
+  "config": {
+    "nlist": 1024,
+    "m": 48,
+    "m_target_cpu": 96,
+    "nprobe": 64,
+    "topk": 10,
+    "metric": "inner_product",
+    "use_float16_lookup_tables": true
+  },
+  "note_index_build": "train+add on CPU + GPU transfer; excluded from per-query latency",
+  "warmup": 50,
+  "n_measure": 500,
+  "pool_source": "/sda/yxyang/qsba_workspace/mbeir_aligned/data/visualnews_task3/image_embeddings.pt",
+  "query_source": "/sda/yxyang/qsba_workspace/mbeir_aligned/data/visualnews_task3/text_embeddings.pt",
+  "sweep_dataset_size_k": [
+    {
+      "N_k": 50,
+      "corpus_size": 50000,
+      "nlist": 1024,
+      "index_build_ms": 178259.32,
+      "search": {
+        "mean_ms": 0.2067,
+        "std_ms": 0.0947,
+        "p50_ms": 0.1986,
+        "p95_ms": 0.2161,
+        "queries_per_sec": 4837.0919,
+        "n": 500
+      }
+    },
+    {
+      "N_k": 100,
+      "corpus_size": 100000,
+      "nlist": 1024,
+      "index_build_ms": 278958.54,
+      "search": {
+        "mean_ms": 0.2745,
+        "std_ms": 0.7413,
+        "p50_ms": 0.1953,
+        "p95_ms": 0.2086,
+        "queries_per_sec": 3642.9622,
+        "n": 500
+      }
+    },
+    {
+      "N_k": 150,
+      "corpus_size": 150000,
+      "nlist": 1024,
+      "index_build_ms": 128858.89,
+      "search": {
+        "mean_ms": 0.202,
+        "std_ms": 0.011,
+        "p50_ms": 0.1994,
+        "p95_ms": 0.2198,
+        "queries_per_sec": 4950.4483,
+        "n": 500
+      }
+    },
+    {
+      "N_k": 200,
+      "corpus_size": 200000,
+      "nlist": 1024,
+      "index_build_ms": 126136.75,
+      "search": {
+        "mean_ms": 0.1967,
+        "std_ms": 0.0087,
+        "p50_ms": 0.1944,
+        "p95_ms": 0.2075,
+        "queries_per_sec": 5085.0296,
+        "n": 500
+      }
+    },
+    {
+      "N_k": 250,
+      "corpus_size": 250000,
+      "nlist": 1024,
+      "index_build_ms": 128554.37,
+      "search": {
+        "mean_ms": 0.2175,
+        "std_ms": 0.3096,
+        "p50_ms": 0.1994,
+        "p95_ms": 0.2316,
+        "queries_per_sec": 4598.6534,
+        "n": 500
+      }
+    },
+    {
+      "N_k": 300,
+      "corpus_size": 300000,
+      "nlist": 1024,
+      "index_build_ms": 139880.46,
+      "search": {
+        "mean_ms": 0.2221,
+        "std_ms": 0.0905,
+        "p50_ms": 0.2112,
+        "p95_ms": 0.2385,
+        "queries_per_sec": 4502.0667,
+        "n": 500
+      }
+    },
+    {
+      "N_k": 537,
+      "corpus_size": 537568,
+      "nlist": 1024,
+      "index_build_ms": 178216.96,
+      "search": {
+        "mean_ms": 0.2381,
+        "std_ms": 0.0387,
+        "p50_ms": 0.223,
+        "p95_ms": 0.2884,
+        "queries_per_sec": 4200.5242,
+        "n": 500
+      }
+    }
+  ],
+  "corpus_size": 537568,
+  "index_build_ms": 178216.96,
+  "search": {
+    "mean_ms": 0.2381,
+    "std_ms": 0.0387,
+    "p50_ms": 0.223,
+    "p95_ms": 0.2884,
+    "queries_per_sec": 4200.5242,
+    "n": 500
+  }
+}

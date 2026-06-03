@@ -1,0 +1,10 @@
+{
+  "recall@1": 0.2209,
+  "recall@5": 0.4251,
+  "recall@10": 0.51615,
+  "n_queries": 20000,
+  "pool_size": 537568,
+  "task": "visualnews_task3 qi->ct",
+  "method": "clip_dense_exhaustive_cosine",
+  "elapsed_sec": 104.2
+}

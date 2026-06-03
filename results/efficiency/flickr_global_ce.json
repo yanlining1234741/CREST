@@ -1,0 +1,8 @@
+{
+  "dataset": "flickr30k_disjoint",
+  "K": 64,
+  "M": 8,
+  "protocol": "GENIUS Table3 Karpathy; global shared CE (not per-bucket)",
+  "ce_checkpoint": "work/flickr_global_ce/ce_n64.pt",
+  "ce_params_M": 2.102785
+}

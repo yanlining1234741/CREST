@@ -1,0 +1,25 @@
+{
+  "dataset": "mscoco",
+  "K": 128,
+  "M": 8,
+  "B": 1,
+  "rerank": "flat",
+  "rows": [
+    {
+      "method": "k-means (\u03b5=0.03)",
+      "epsilon": 0.03,
+      "std_over_mean": 1.9728310108184814,
+      "rR@1": 0.9778306259825064,
+      "R@1": 0.5414567294127132,
+      "source": "/sda/yxyang/qsba_workspace/lnyan-experiment/work/sinkhorn_eps0_03_K128_M8"
+    },
+    {
+      "method": "Sinkhorn (\u03b5=0.01)",
+      "epsilon": 0.01,
+      "std_over_mean": 0.6155220866203308,
+      "rR@1": 0.9638437663751058,
+      "R@1": 0.5363779273650692,
+      "source": "/sda/yxyang/qsba_workspace/mbeir_aligned/outputs/mscoco"
+    }
+  ]
+}

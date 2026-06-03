@@ -1,0 +1,26 @@
+{
+  "protocol": "80% base hard_assignment + 20% argtop_M insert, router frozen",
+  "baseline_full_training": {
+    "R@1": 72.08,
+    "R@5": 87.3,
+    "R@10": 89.34,
+    "note": "qsba flat B=1 \u5168\u91cf\u8bad\u7ec3"
+  },
+  "after_insertion_all": {
+    "R@1": 72.08,
+    "R@5": 87.3,
+    "R@10": 89.34,
+    "n": 5000
+  },
+  "after_insertion_new_queries": {
+    "R@1": 71.6,
+    "R@5": 87.1,
+    "R@10": 89.0,
+    "n": 1000
+  },
+  "n_base": 800,
+  "n_new": 200,
+  "r1_gap_vs_baseline": 0.0,
+  "centroids": "/sda/yxyang/qsba_workspace/mbeir_aligned/outputs/flickr/assignment_K64_M8.pt",
+  "router": "/sda/yxyang/qsba_workspace/mbeir_aligned/outputs/flickr/router_K64.pt"
+}

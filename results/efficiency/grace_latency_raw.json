@@ -1,0 +1,17 @@
+{
+  "status": "measured",
+  "mean_ms": 4644.7953,
+  "std_ms": 442.1069,
+  "p50_ms": 4568.0139,
+  "p95_ms": 5337.3126,
+  "queries_per_sec": 0.2153,
+  "num_beams": 10,
+  "n_measured": 500,
+  "warmup": 50,
+  "n_measure": 500,
+  "note": "measured_flamingo3b_constrained_t2id_batch1",
+  "checkpoint": "/home/yxyang/new_GRACE/GRACE/checkpoints/deepspeed3_bf16_i2id_t2id_automatic_id_coco/epoch_4",
+  "bundle": "coco_automatic",
+  "dataset": "coco",
+  "grace_root": "/home/yxyang/new_GRACE/GRACE"
+}

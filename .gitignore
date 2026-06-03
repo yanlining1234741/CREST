@@ -1,0 +1,34 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+*.bak
+
+# Data & checkpoints (too large for git — use LFS or external hosting)
+data/**/*.pt
+data/**/*.bin
+outputs/
+*.pt
+*.pth
+*.ckpt
+
+# Logs & temp
+*.log
+work/
+benchmarks/work/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Keep published small results
+!results/**/*.json
+!results/**/*.txt
+!results/**/*.png

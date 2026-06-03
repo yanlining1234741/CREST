@@ -1,0 +1,15 @@
+=== 重要: Protocol 说明 (2026-05-28) ===
+
+以下旧实验使用的 embedding NON-GENIUS-PROTOCOL:
+  - data_clipsf_v2 (MSCOCO): query split 自分, 可能无 instruction
+  - data_visualnews_clipsf (VN): query split 非官方 (15% 重合 M-BEIR test)
+  - data_flickr_clipsf_shuffled (Flickr): 非 Karpathy split, 多 769 张
+  - data_merged_clipsf (Merged): 基于上述
+
+这些实验结果 (cross_encoder/, ce_ablation/) 不能直接 vs GENIUS。
+保留作为开发记录。
+
+新的 M-BEIR 对齐实验在: /sda/yxyang/qsba_workspace/mbeir_aligned/
+使用 GENIUS 官方编码 embedding:
+  /sdd/web3bench-500g/lnyan/projects/GENIUS-CVPR25/extracted_embed/CLIP_SF/
+  /sdd/web3bench-500g/lnyan/projects/GENIUS-CVPR25/gen_code/.../

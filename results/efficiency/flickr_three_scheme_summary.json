@@ -1,0 +1,65 @@
+{
+  "dataset": "flickr30k_disjoint",
+  "protocol": "router top-B + bucket rerank, 5000 queries, pool=1000",
+  "schemes": {
+    "flat_cosine": {
+      "label": "baseline flat",
+      "no_cosine": false,
+      "params": "~0",
+      "R@1_B1": 72.08,
+      "R@5_B1": 87.30,
+      "R@10_B1": 89.34,
+      "R@1_B3": 76.14,
+      "R@1_B5": 76.44
+    },
+    "A_bilinear": {
+      "label": "scheme A bilinear",
+      "no_cosine": true,
+      "params": "~0.6M",
+      "R@1_B1": 66.64,
+      "R@5_B1": 85.88,
+      "R@10_B1": 88.92,
+      "R@1_B3": 70.14,
+      "R@1_B5": 70.32,
+      "train_val_acc": 97.89,
+      "checkpoint": "work/flickr_bilinear/bilinear.pt"
+    },
+    "B_item_router": {
+      "label": "scheme B item MLP router",
+      "no_cosine": true,
+      "params": "~1.5M",
+      "R@1_B1": 15.00,
+      "R@5_B1": 29.28,
+      "R@10_B1": 36.78,
+      "R@1_B3": 15.16,
+      "R@1_B5": 15.16,
+      "train_val_acc": 25.61,
+      "checkpoint": "work/flickr_item_router/item_router.pt"
+    },
+    "C_ce_pure": {
+      "label": "scheme C CE only (hn=1.0)",
+      "no_cosine": false,
+      "params": "~2.1M",
+      "R@1_B1": 70.60,
+      "R@5_B1": 86.18,
+      "R@1_B3": 74.10,
+      "R@1_B5": 74.28
+    },
+    "C_residual_a0.1": {
+      "label": "scheme C residual cos+0.1*z(CE) [recommended]",
+      "no_cosine": false,
+      "params": "~2.1M",
+      "R@1_B1": 73.48,
+      "R@5_B1": 87.44,
+      "R@10_B1": null,
+      "R@1_B3": 77.52,
+      "R@1_B5": 77.80,
+      "checkpoint": "work/flickr_global_ce/cross_encoder.pt"
+    }
+  },
+  "decision": {
+    "criterion_R1_B1_min": 73.5,
+    "winner": "C_residual_a0.1",
+    "reason": "Only scheme meeting 73.5% B=1; A and B no-cosine both far below flat and residual."
+  }
+}

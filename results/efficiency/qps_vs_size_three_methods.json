@@ -1,0 +1,226 @@
+{
+  "dataset": "visualnews_task3",
+  "methods": [
+    "QSBA+CE",
+    "GENIUS",
+    "GRACE"
+  ],
+  "qsba_ce": [
+    {
+      "N_k": 1,
+      "N": 11,
+      "mean_ms": 0.5682537961999575,
+      "qps": 1759.7770691321864
+    },
+    {
+      "N_k": 5,
+      "N": 58,
+      "mean_ms": 0.6431181159284379,
+      "qps": 1554.924321415436
+    },
+    {
+      "N_k": 10,
+      "N": 117,
+      "mean_ms": 0.6644720362292396,
+      "qps": 1504.9542275320146
+    },
+    {
+      "N_k": 25,
+      "N": 292,
+      "mean_ms": 0.6678971382313305,
+      "qps": 1497.2365395188197
+    },
+    {
+      "N_k": 50,
+      "N": 585,
+      "mean_ms": 0.7347869161102506,
+      "qps": 1360.9387675187668
+    },
+    {
+      "N_k": 100,
+      "N": 1171,
+      "mean_ms": 0.9469062042898603,
+      "qps": 1056.0708077205575
+    },
+    {
+      "N_k": 150,
+      "N": 1757,
+      "mean_ms": 1.2220982384681702,
+      "qps": 818.2648239911076
+    },
+    {
+      "N_k": 200,
+      "N": 2343,
+      "mean_ms": 1.4898816030555302,
+      "qps": 671.19427339001
+    },
+    {
+      "N_k": 250,
+      "N": 2929,
+      "mean_ms": 1.7651489784982468,
+      "qps": 566.5244192877022
+    },
+    {
+      "N_k": 300,
+      "N": 3515,
+      "mean_ms": 2.0370782588587866,
+      "qps": 490.8991569917499
+    },
+    {
+      "N_k": 537,
+      "N": 6292,
+      "mean_ms": 3.439456564585368,
+      "qps": 290.743604759129
+    }
+  ],
+  "genius_info": {
+    "mean_ms": 162.0136,
+    "std_ms": 8.2973,
+    "p95_ms": 176.8556,
+    "qps": 6.1723,
+    "dataset": "VN task3",
+    "source": "/sda/yxyang/qsba_workspace/lnyan-experiment/results/genius_latency_raw.json",
+    "note": "measured_t5small_50beam_preextracted_emb_VN_task3"
+  },
+  "grace_info": {
+    "mean_ms": 4644.7953,
+    "std_ms": 442.1069,
+    "p95_ms": 5337.3126,
+    "qps": 0.2153,
+    "dataset": "coco",
+    "source": "/sda/yxyang/qsba_workspace/lnyan-experiment/results/grace_latency_raw.json",
+    "note": "COCO coco_automatic n=500"
+  },
+  "genius": [
+    {
+      "N_k": 1,
+      "qps": 6.1723,
+      "note": "VN measured"
+    },
+    {
+      "N_k": 5,
+      "qps": 6.1723,
+      "note": "VN measured"
+    },
+    {
+      "N_k": 10,
+      "qps": 6.1723,
+      "note": "VN measured"
+    },
+    {
+      "N_k": 25,
+      "qps": 6.1723,
+      "note": "VN measured"
+    },
+    {
+      "N_k": 50,
+      "qps": 6.1723,
+      "note": "VN measured"
+    },
+    {
+      "N_k": 100,
+      "qps": 6.1723,
+      "note": "VN measured"
+    },
+    {
+      "N_k": 150,
+      "qps": 6.1723,
+      "note": "VN measured"
+    },
+    {
+      "N_k": 200,
+      "qps": 6.1723,
+      "note": "VN measured"
+    },
+    {
+      "N_k": 250,
+      "qps": 6.1723,
+      "note": "VN measured"
+    },
+    {
+      "N_k": 300,
+      "qps": 6.1723,
+      "note": "VN measured"
+    },
+    {
+      "N_k": 400,
+      "qps": 6.1723,
+      "note": "VN measured"
+    },
+    {
+      "N_k": 537,
+      "qps": 6.1723,
+      "note": "VN measured"
+    }
+  ],
+  "grace": [
+    {
+      "N_k": 1,
+      "qps": 0.2153,
+      "note": "COCO measured"
+    },
+    {
+      "N_k": 5,
+      "qps": 0.2153,
+      "note": "COCO measured"
+    },
+    {
+      "N_k": 10,
+      "qps": 0.2153,
+      "note": "COCO measured"
+    },
+    {
+      "N_k": 25,
+      "qps": 0.2153,
+      "note": "COCO measured"
+    },
+    {
+      "N_k": 50,
+      "qps": 0.2153,
+      "note": "COCO measured"
+    },
+    {
+      "N_k": 100,
+      "qps": 0.2153,
+      "note": "COCO measured"
+    },
+    {
+      "N_k": 150,
+      "qps": 0.2153,
+      "note": "COCO measured"
+    },
+    {
+      "N_k": 200,
+      "qps": 0.2153,
+      "note": "COCO measured"
+    },
+    {
+      "N_k": 250,
+      "qps": 0.2153,
+      "note": "COCO measured"
+    },
+    {
+      "N_k": 300,
+      "qps": 0.2153,
+      "note": "COCO measured"
+    },
+    {
+      "N_k": 400,
+      "qps": 0.2153,
+      "note": "COCO measured"
+    },
+    {
+      "N_k": 537,
+      "qps": 0.2153,
+      "note": "COCO measured"
+    }
+  ],
+  "metadata": {
+    "hardware": "V100",
+    "batch": 1,
+    "qsba_source": "/sda/yxyang/qsba_workspace/lnyan-experiment/results/qps_vs_size_raw.json",
+    "genius_source": "/sda/yxyang/qsba_workspace/lnyan-experiment/results/genius_latency_raw.json",
+    "grace_source": "/sda/yxyang/qsba_workspace/lnyan-experiment/results/grace_latency_raw.json",
+    "grace_dataset": "coco"
+  }
+}
