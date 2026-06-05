@@ -139,10 +139,7 @@ def main() -> None:
     p = argparse.ArgumentParser()
     p.add_argument(
         "--data-root",
-        default=os.environ.get(
-            "CREST_DATA_ROOT",
-            os.environ.get("QSBA_DATA_ROOT", str(REPO.parent / "mbeir_aligned")),
-        ),
+        default=os.environ.get("CREST_DATA_ROOT", str(REPO.parent / "mbeir_aligned")),
         help="M-BEIR aligned data directory (embeddings + outputs)",
     )
     args = p.parse_args()

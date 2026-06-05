@@ -4,7 +4,7 @@
 
 > **生成日期：** 2026-05-28  
 > **核对日期：** 2026-05-28（由 Cursor 从 JSON 自动汇总）  
-> **QSBA 数字来源：** `cross_encoder/*/eval_cross_encoder.json`、`ce_ablation/*/eval_ce.json`；flat 对照来自同目录 `eval_cosine.json` 或 `claudenew/qsba/outputs_*`  
+> **CREST 数字来源：** `cross_encoder/*/eval_cross_encoder.json`、`ce_ablation/*/eval_ce.json`；flat 对照来自同目录 `eval_cosine.json` 或 `CREST repo/outputs_*`  
 > **标 `†` 的 baseline：** 原论文引用，非本仓库重跑  
 
 ---
@@ -77,12 +77,12 @@
 | GRACE `†` | — | 73.5 | 92.0 | 95.7 | 1,000 |
 | AVG `†` | — | 79.2 | 94.0 | 96.6 | 1,000 |
 | GENIUS `†` | — | **84.1** | **96.5** | **98.1** | 1,000 |
-| **QSBA** (K=32, M=8, B=1) | cross-encoder | **77.98** | 92.90 | 94.82 | **308** |
-| **QSBA** (K=32, M=8, B=3) | cross-encoder | **79.82** | 95.52 | 97.78 | 601 |
-| **QSBA** (K=32, M=8, B=5) | cross-encoder | 79.94 | 95.64 | 97.92 | 762 |
-| **QSBA** (K=64, M=12, B=1) | cross-encoder | **78.24** | 92.66 | 94.62 | **254** |
-| **QSBA** (K=64, M=12, B=3) | cross-encoder | **80.06** | 95.38 | 97.70 | 514 |
-| QSBA (K=32, M=8, B=1) | flat cosine | 77.54 | 92.58 | 94.60 | 308 |
+| **CREST** (K=32, M=8, B=1) | cross-encoder | **77.98** | 92.90 | 94.82 | **308** |
+| **CREST** (K=32, M=8, B=3) | cross-encoder | **79.82** | 95.52 | 97.78 | 601 |
+| **CREST** (K=32, M=8, B=5) | cross-encoder | 79.94 | 95.64 | 97.92 | 762 |
+| **CREST** (K=64, M=12, B=1) | cross-encoder | **78.24** | 92.66 | 94.62 | **254** |
+| **CREST** (K=64, M=12, B=3) | cross-encoder | **80.06** | 95.38 | 97.70 | 514 |
+| CREST (K=32, M=8, B=1) | flat cosine | 77.54 | 92.58 | 94.60 | 308 |
 
 > 来源：`cross_encoder/flickr_K32_M8`、`flickr_K64_M12`  
 > K=64,M=12：更少候选（254），R@1 略高于 K32,M=8（78.24 vs 77.98）
@@ -99,13 +99,13 @@
 | GRACE `†` | — | 46.8 | 74.8 | 83.2 | 5,000 |
 | AVG `†` | — | 51.3 | 77.9 | 85.7 | 5,000 |
 | GENIUS `†` | — | **58.1** | **82.3** | **88.9** | 5,000 |
-| **QSBA** (K=64, M=6, B=1) | cross-encoder | **53.65** | 79.01 | 86.52 | **633** |
-| **QSBA** (K=64, M=6, B=3) | cross-encoder | **54.37** | 80.10 | 87.78 | 1,539 |
-| **QSBA** (K=64, M=6, B=5) | cross-encoder | 54.39 | 80.14 | 87.81 | 2,215 |
-| **QSBA** (K=128, M=8, B=1) | cross-encoder | **53.17** | 78.43 | 85.82 | **467** |
-| **QSBA** (K=128, M=8, B=3) | cross-encoder | **54.16** | 79.95 | 87.70 | 1,106 |
-| QSBA (K=64, M=6, B=1) | flat cosine | 54.42 | 79.16 | 86.70 | 633 |
-| QSBA (K=128, M=8, B=1) | flat cosine | 53.99 | 78.87 | 86.34 | 467 |
+| **CREST** (K=64, M=6, B=1) | cross-encoder | **53.65** | 79.01 | 86.52 | **633** |
+| **CREST** (K=64, M=6, B=3) | cross-encoder | **54.37** | 80.10 | 87.78 | 1,539 |
+| **CREST** (K=64, M=6, B=5) | cross-encoder | 54.39 | 80.14 | 87.81 | 2,215 |
+| **CREST** (K=128, M=8, B=1) | cross-encoder | **53.17** | 78.43 | 85.82 | **467** |
+| **CREST** (K=128, M=8, B=3) | cross-encoder | **54.16** | 79.95 | 87.70 | 1,106 |
+| CREST (K=64, M=6, B=1) | flat cosine | 54.42 | 79.16 | 86.70 | 633 |
+| CREST (K=128, M=8, B=1) | flat cosine | 53.99 | 78.87 | 86.34 | 467 |
 
 > 来源：`cross_encoder/mscoco_K64_M6`、`mscoco_K128_M8`  
 > `‡` 来自 `outputs_extra2_K32_M18/eval_correct.json`（K=32,M=18，近全池 flat，**非 CE**）  
@@ -118,13 +118,13 @@
 | Method | Rerank | R@1 | R@5 | R@10 | Cand@B=1 |
 |--------|--------|-----|-----|------|----------|
 | CLIP dense (ours) | — | **[待跑]** | [待跑] | [待跑] | 36,783 |
-| **QSBA** (K=128, M=8, B=1) | cross-encoder | **50.87** | 76.31 | 83.99 | **2,728** |
-| **QSBA** (K=128, M=8, B=3) | cross-encoder | **51.62** | 77.59 | 85.55 | 6,127 |
-| **QSBA** (K=512, M=6, B=1) | cross-encoder | **50.81** | 75.20 | 82.49 | **469** |
-| **QSBA** (K=512, M=6, B=3) | cross-encoder | **52.49** | 77.98 | 85.82 | 1,126 |
-| **QSBA** (K=512, M=12, B=1) | cross-encoder | **50.90** | 76.04 | 83.70 | **1,034** |
-| **QSBA** (K=512, M=12, B=3) | cross-encoder | **51.92** | 77.78 | 85.80 | 2,366 |
-| QSBA (K=128, M=8, B=1) | flat cosine | 47.83 | 72.53 | 80.54 | 2,728 |
+| **CREST** (K=128, M=8, B=1) | cross-encoder | **50.87** | 76.31 | 83.99 | **2,728** |
+| **CREST** (K=128, M=8, B=3) | cross-encoder | **51.62** | 77.59 | 85.55 | 6,127 |
+| **CREST** (K=512, M=6, B=1) | cross-encoder | **50.81** | 75.20 | 82.49 | **469** |
+| **CREST** (K=512, M=6, B=3) | cross-encoder | **52.49** | 77.98 | 85.82 | 1,126 |
+| **CREST** (K=512, M=12, B=1) | cross-encoder | **50.90** | 76.04 | 83.70 | **1,034** |
+| **CREST** (K=512, M=12, B=3) | cross-encoder | **51.92** | 77.78 | 85.80 | 2,366 |
+| CREST (K=128, M=8, B=1) | flat cosine | 47.83 | 72.53 | 80.54 | 2,728 |
 
 > 来源：`cross_encoder/merged_K128_M8`、`merged_K512_M6`、`merged_K512_M12`  
 > CE 相对 flat 约 **+3.0pp R@1**（50.87 vs 47.83 @ K128 M8）
@@ -136,12 +136,12 @@
 | Method | Rerank | R@1 | R@5 | R@10 | Cand@B=1 |
 |--------|--------|-----|-----|------|----------|
 | CLIP dense (ours) | — | **[待跑]** | [待跑] | [待跑] | 542,246 |
-| **QSBA** (K=128, M=8, B=1) | cross-encoder | **19.59** | 37.46 | 45.63 | **47,917** |
-| **QSBA** (K=128, M=8, B=3) | cross-encoder | **20.48** | 39.46 | 48.15 | 113,227 |
-| **QSBA** (K=128, M=8, B=5) | cross-encoder | 20.60 | 39.75 | 48.42 | 164,481 |
-| **QSBA** (K=128, M=12, B=1) | cross-encoder | **19.81** | 38.08 | 46.44 | **85,891** |
-| **QSBA** (K=128, M=12, B=3) | cross-encoder | **20.34** | 39.29 | 48.11 | 183,242 |
-| QSBA (K=128, M=8, B=1) | flat cosine | 18.43 | 35.56 | 43.95 | 47,917 |
+| **CREST** (K=128, M=8, B=1) | cross-encoder | **19.59** | 37.46 | 45.63 | **47,917** |
+| **CREST** (K=128, M=8, B=3) | cross-encoder | **20.48** | 39.46 | 48.15 | 113,227 |
+| **CREST** (K=128, M=8, B=5) | cross-encoder | 20.60 | 39.75 | 48.42 | 164,481 |
+| **CREST** (K=128, M=12, B=1) | cross-encoder | **19.81** | 38.08 | 46.44 | **85,891** |
+| **CREST** (K=128, M=12, B=3) | cross-encoder | **20.34** | 39.29 | 48.11 | 183,242 |
+| CREST (K=128, M=8, B=1) | flat cosine | 18.43 | 35.56 | 43.95 | 47,917 |
 
 > 来源：`cross_encoder/vn_K128_M8`、`vn_K128_M12`  
 > M=12：router R@1 更高，但候选 ~1.8×（85,891 vs 47,917），R@1 仅 +0.22pp
@@ -150,7 +150,7 @@
 
 ## Table 2 — 效率对比（Candidates per Query，B=1）
 
-| Dataset | Pool | Dense | QSBA (CE) | 配置 | 压缩比 |
+| Dataset | Pool | Dense | CREST (CE) | 配置 | 压缩比 |
 |---------|------|-------|-----------|------|--------|
 | Flickr30K | 1,000 | 1,000 | **308** | K32 M8 | **30.8%** |
 | Flickr30K | 1,000 | 1,000 | **254** | K64 M12 | **25.4%** |
@@ -176,7 +176,7 @@
 | 0.25 | 99.79% | 1,484 | 55.24% | [无] |
 | 0.0 (caption only) | 99.87% | 1,338 | 55.22% | [无] |
 
-> flat 来源：`claudenew/qsba/outputs_table3_alpha*_K32_M6/eval_correct.json`  
+> flat 来源：`CREST repo/outputs_table3_alpha*_K32_M6/eval_correct.json`  
 > **论文建议：** Table 3 仅报 flat，正文注明「CE rerank 下 α 趋势与 flat 一致（未单独训练 5 组 CE）」；或补跑 5× CE 训练。
 
 ---
@@ -274,7 +274,7 @@
 
 ## 论文叙事用对比（CE，推荐报 B=3 行）
 
-| 数据集 | GENIUS R@1 `†` | QSBA CE R@1 | 配置 | Cand@B=3 | Cand/Pool |
+| 数据集 | GENIUS R@1 `†` | CREST CE R@1 | 配置 | Cand@B=3 | Cand/Pool |
 |--------|----------------|-------------|------|----------|-----------|
 | Flickr30K | 84.1% | **80.06%** | K64 M12 | 514 | 51.4% |
 | Flickr30K | 84.1% | **79.82%** | K32 M8 | 601 | 60.1% |

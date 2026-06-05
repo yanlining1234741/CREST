@@ -1,11 +1,11 @@
 {
   "dataset": "visualnews_task3",
   "methods": [
-    "QSBA+CE",
+    "CREST+CE",
     "GENIUS",
     "GRACE"
   ],
-  "qsba_ce": [
+  "crest_ce": [
     {
       "N_k": 1,
       "N": 11,
@@ -79,7 +79,7 @@
     "p95_ms": 176.8556,
     "qps": 6.1723,
     "dataset": "VN task3",
-    "source": "/sda/yxyang/qsba_workspace/lnyan-experiment/results/genius_latency_raw.json",
+    "source": "/sda/yxyang/crest_workspace/lnyan-experiment/results/genius_latency_raw.json",
     "note": "measured_t5small_50beam_preextracted_emb_VN_task3"
   },
   "grace_info": {
@@ -88,7 +88,7 @@
     "p95_ms": 5337.3126,
     "qps": 0.2153,
     "dataset": "coco",
-    "source": "/sda/yxyang/qsba_workspace/lnyan-experiment/results/grace_latency_raw.json",
+    "source": "/sda/yxyang/crest_workspace/lnyan-experiment/results/grace_latency_raw.json",
     "note": "COCO coco_automatic n=500"
   },
   "genius": [
@@ -218,9 +218,9 @@
   "metadata": {
     "hardware": "V100",
     "batch": 1,
-    "qsba_source": "/sda/yxyang/qsba_workspace/lnyan-experiment/results/qps_vs_size_raw.json",
-    "genius_source": "/sda/yxyang/qsba_workspace/lnyan-experiment/results/genius_latency_raw.json",
-    "grace_source": "/sda/yxyang/qsba_workspace/lnyan-experiment/results/grace_latency_raw.json",
+    "crest_source": "/sda/yxyang/crest_workspace/lnyan-experiment/results/qps_vs_size_raw.json",
+    "genius_source": "/sda/yxyang/crest_workspace/lnyan-experiment/results/genius_latency_raw.json",
+    "grace_source": "/sda/yxyang/crest_workspace/lnyan-experiment/results/grace_latency_raw.json",
     "grace_dataset": "coco"
   }
 }

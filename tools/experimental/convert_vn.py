@@ -1,5 +1,5 @@
 """
-Convert GENIUS VisualNews embeddings -> QSBA format (strict GENIUS M-BEIR task0 protocol).
+Convert GENIUS VisualNews embeddings -> CREST format (strict GENIUS M-BEIR task0 protocol).
 text_embeddings.pt = [train 99903 ; test 19995], image_ids = target row index.
 """
 import json

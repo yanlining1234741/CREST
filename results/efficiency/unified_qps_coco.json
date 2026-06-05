@@ -77,10 +77,10 @@
       "emb_precomputed": false,
       "num_beams": 10,
       "note": "VN measured latency (corpus-independent autoregressive GR)",
-      "source": "/sda/yxyang/qsba_workspace/lnyan-experiment/results/grace_latency_raw.json"
+      "source": "/sda/yxyang/crest_workspace/lnyan-experiment/results/grace_latency_raw.json"
     },
     {
-      "method": "QSBA router",
+      "method": "CREST router",
       "dataset": "mscoco_task0_5k",
       "mean_ms": 0.2201,
       "std_ms": 0.0715,
@@ -93,11 +93,11 @@
       "batch": 1,
       "emb_precomputed": true,
       "status": "measured",
-      "checkpoint": "/sda/yxyang/qsba_workspace/mbeir_aligned/outputs/mscoco/router_K128.pt",
+      "checkpoint": "/sda/yxyang/crest_workspace/mbeir_aligned/outputs/mscoco/router_K128.pt",
       "K": 128
     },
     {
-      "method": "QSBA router+CE",
+      "method": "CREST router+CE",
       "dataset": "mscoco_task0_5k",
       "mean_ms": 22.4382,
       "std_ms": 7.0406,
@@ -110,9 +110,9 @@
       "batch": 1,
       "emb_precomputed": true,
       "status": "measured",
-      "checkpoint_router": "/sda/yxyang/qsba_workspace/mbeir_aligned/outputs/mscoco/router_K128.pt",
-      "checkpoint_ce": "/sda/yxyang/qsba_workspace/mbeir_aligned/cross_encoder/mscoco_K128_M8/cross_encoder.pt",
-      "assignment": "/sda/yxyang/qsba_workspace/mbeir_aligned/outputs/mscoco/assignment_K128_M8.pt",
+      "checkpoint_router": "/sda/yxyang/crest_workspace/mbeir_aligned/outputs/mscoco/router_K128.pt",
+      "checkpoint_ce": "/sda/yxyang/crest_workspace/mbeir_aligned/cross_encoder/mscoco_K128_M8/cross_encoder.pt",
+      "assignment": "/sda/yxyang/crest_workspace/mbeir_aligned/outputs/mscoco/assignment_K128_M8.pt",
       "B": 1,
       "K": 128,
       "M": 8

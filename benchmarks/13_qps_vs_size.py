@@ -11,9 +11,9 @@ from typing import Optional
 import numpy as np
 import torch
 import torch.nn as nn
-from paths import CE, DATA, MBEIR, QSBA, RESULTS
+from paths import CE, CREST_ROOT, DATA, MBEIR, RESULTS
 
-sys.path.insert(0, str(QSBA))
+sys.path.insert(0, str(CREST_ROOT))
 
 WARMUP = 50
 N_MEASURE = 300
@@ -174,7 +174,7 @@ def main() -> None:
         raise RuntimeError("CUDA required for QPS benchmark (cuda.Event timing).")
 
     device = torch.device("cuda")
-    print(f"CREST_ROOT={QSBA}", flush=True)
+    print(f"CREST_ROOT={CREST_ROOT}", flush=True)
     print(f"Device: {device}", flush=True)
 
     query_emb, pool_emb = load_embeddings()

@@ -8,10 +8,9 @@ REPO_ROOT = Path(__file__).resolve().parents[1]
 
 
 def data_root() -> Path:
-    for key in ("CREST_DATA_ROOT", "QSBA_DATA_ROOT"):
-        v = os.environ.get(key)
-        if v:
-            return Path(v).resolve()
+    v = os.environ.get("CREST_DATA_ROOT")
+    if v:
+        return Path(v).resolve()
     return (REPO_ROOT.parent / "mbeir_aligned").resolve()
 
 

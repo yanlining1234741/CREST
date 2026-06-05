@@ -288,10 +288,10 @@
     "p95_ms": 176.8556,
     "qps": 6.1723,
     "dataset": "VN task3",
-    "source": "/sda/yxyang/qsba_workspace/lnyan-experiment/results/genius_latency_raw.json",
+    "source": "/sda/yxyang/crest_workspace/lnyan-experiment/results/genius_latency_raw.json",
     "note": "measured_t5small_50beam_preextracted_emb_VN_task3"
   },
-  "qsba_ce": [
+  "crest_ce": [
     {
       "N_k": 1,
       "N": 11,
@@ -427,7 +427,7 @@
     "p95_ms": 5337.3126,
     "qps": 0.2153,
     "dataset": "coco",
-    "source": "/sda/yxyang/qsba_workspace/lnyan-experiment/results/grace_latency_raw.json",
+    "source": "/sda/yxyang/crest_workspace/lnyan-experiment/results/grace_latency_raw.json",
     "note": "COCO coco_automatic n=500"
   },
   "genius_orig": {
@@ -444,11 +444,11 @@
     "warmup": 50,
     "n_measure": 300,
     "pool": "VN task3 text pool (image queries)",
-    "pool_path": "/sda/yxyang/qsba_workspace/mbeir_aligned/data/visualnews_task3/text_embeddings.pt",
-    "query_path": "/sda/yxyang/qsba_workspace/mbeir_aligned/data/visualnews_task3/image_embeddings.pt",
-    "qsba_source": "/sda/yxyang/qsba_workspace/lnyan-experiment/results/qps_vs_size_raw.json",
-    "genius_source": "/sda/yxyang/qsba_workspace/lnyan-experiment/results/genius_latency_raw.json",
-    "grace_source": "/sda/yxyang/qsba_workspace/lnyan-experiment/results/grace_latency_raw.json",
+    "pool_path": "/sda/yxyang/crest_workspace/mbeir_aligned/data/visualnews_task3/text_embeddings.pt",
+    "query_path": "/sda/yxyang/crest_workspace/mbeir_aligned/data/visualnews_task3/image_embeddings.pt",
+    "crest_source": "/sda/yxyang/crest_workspace/lnyan-experiment/results/qps_vs_size_raw.json",
+    "genius_source": "/sda/yxyang/crest_workspace/lnyan-experiment/results/genius_latency_raw.json",
+    "grace_source": "/sda/yxyang/crest_workspace/lnyan-experiment/results/grace_latency_raw.json",
     "grace_dataset": "coco",
     "emb_precomputed": true,
     "cuda_device": "1"

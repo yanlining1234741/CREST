@@ -39,9 +39,12 @@ def main() -> None:
 
     spec = get_dataset(args.dataset)
     eval_path = cross_encoder_dir(args.dataset, spec.K, spec.M) / "eval_cross_encoder.json"
-    ref_path = REPO / "results" / "paper" / f"{args.dataset}_K{spec.K}_M{spec.M}" / "eval_cross_encoder.json"
-    if args.dataset == "visualnews_task3":
-        ref_path = REPO / "results" / "paper" / "vn_task3_K512_M6" / "eval_cross_encoder.json"
+    ref_names = {
+        "flickr": "flickr_K64_M8",
+        "mscoco": "mscoco_K128_M8",
+        "visualnews_task3": "vn_task3_K512_M6",
+    }
+    ref_path = REPO / "results" / "paper" / ref_names[args.dataset] / "eval_cross_encoder.json"
 
     if not eval_path.exists():
         print(f"Missing: {eval_path}\nRun: python run.py train --dataset {args.dataset}")

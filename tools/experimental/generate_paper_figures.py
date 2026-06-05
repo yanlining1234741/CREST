@@ -34,7 +34,7 @@ def fig2_recall_vs_candidates():
         for b in bs:
             cands.append(ev.get(f"candidates@B={b}", pool))
             r1s.append(ev[f"recall@1|B={b}"] * 100)
-        ax.plot(cands, r1s, "o-", color="#2563eb", linewidth=2, markersize=6, label="QSBA")
+        ax.plot(cands, r1s, "o-", color="#2563eb", linewidth=2, markersize=6, label="CREST")
         ax.axhline(83.4 if "Flickr" in title else 58.4, color="gray", ls="--", lw=1, label="CLIP R@1")
         if "Flickr" in title:
             ax.scatter([1000], [84.1], marker="*", color="#dc2626", s=80, zorder=5, label="GENIUS")

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""QPS vs dataset size: CLIP sweep + QSBA/GENIUS/GRACE from existing results."""
+"""QPS vs dataset size: CLIP sweep + CREST/GENIUS/GRACE from existing results."""
 from __future__ import annotations
 
 import argparse
@@ -170,7 +170,7 @@ def load_grace_coco() -> dict:
     return {"mean_ms": 5060.0, "qps": 0.2, "dataset": "coco", "source": "fallback"}
 
 
-def load_qsba_ce_results() -> List[dict]:
+def load_crest_ce_results() -> List[dict]:
     path = RESULTS / "qps_vs_size_raw.json"
     if not path.exists():
         raise FileNotFoundError(f"Missing {path}; run 13_qps_vs_size.py first.")
@@ -213,7 +213,7 @@ def _draw_break_marks(ax_top, ax_bot, size: float = 0.012) -> None:
 
 
 def print_latency_table_three(
-    qsba_results: List[dict],
+    crest_results: List[dict],
     genius: dict,
     grace: dict,
 ) -> None:
@@ -244,7 +244,7 @@ def print_latency_table_three(
     lines.append(header)
     lines.append("-" * len(header))
     lines.append(
-        f"{'CREST+CE (VN)':<22}" + "".join(f"{c:>14}" for c in row_cells(qsba_results))
+        f"{'CREST+CE (VN)':<22}" + "".join(f"{c:>14}" for c in row_cells(crest_results))
     )
     lines.append(
         f"{'GENIUS (VN)':<22}"
@@ -266,7 +266,7 @@ def print_latency_table_three(
 def print_latency_table(
     clip_results: List[dict],
     clip_sf_results: List[dict],
-    qsba_results: List[dict],
+    crest_results: List[dict],
     genius: dict,
     grace: dict,
 ) -> None:
@@ -295,7 +295,7 @@ def print_latency_table(
     for name, rows in (
         ("CLIP (VN)", clip_results),
         ("CLIP-SF (VN)", clip_sf_results),
-        ("CREST+CE (VN)", qsba_results),
+        ("CREST+CE (VN)", crest_results),
     ):
         lines.append(f"{name:<22}" + "".join(f"{c:>14}" for c in row_cells(rows)))
 
@@ -317,7 +317,7 @@ def print_latency_table(
 
 def _plot_three_on_axes(
     ax,
-    qsba_results: List[dict],
+    crest_results: List[dict],
     genius_qps: float,
     grace_qps: float,
 ) -> list:
@@ -344,9 +344,9 @@ def _plot_three_on_axes(
         )
     )
 
-    if qsba_results:
-        qn = np.array([r["N_k"] for r in qsba_results], dtype=float)
-        qq = np.array([r["qps"] for r in qsba_results], dtype=float)
+    if crest_results:
+        qn = np.array([r["N_k"] for r in crest_results], dtype=float)
+        qq = np.array([r["qps"] for r in crest_results], dtype=float)
         if len(qn) >= 4:
             n_smooth = np.linspace(qn.min(), qn.max(), 300)
             qps_smooth = np.clip(make_interp_spline(qn, qq, k=3)(n_smooth), 0, None)
@@ -360,7 +360,7 @@ def _plot_three_on_axes(
             )
         else:
             h, = ax.plot(
-                qn, qq, color=COLOR_OURS, linewidth=2.8, label="QSBA router+CE (VN, V100)", zorder=4
+                qn, qq, color=COLOR_OURS, linewidth=2.8, label="CREST router+CE (VN, V100)", zorder=4
             )
         handles.append(h)
         ax.scatter(qn, qq, color=COLOR_OURS, s=40, edgecolors="white", linewidths=0.5, zorder=5)
@@ -370,7 +370,7 @@ def _plot_three_on_axes(
 
 
 def plot_figure_three(
-    qsba_results: List[dict],
+    crest_results: List[dict],
     genius_qps: float,
     grace_qps: float,
     out_path: Path,
@@ -393,8 +393,8 @@ def plot_figure_three(
         gridspec_kw={"height_ratios": [2.2, 1.0], "hspace": 0.06},
     )
 
-    handles = _plot_three_on_axes(ax_top, qsba_results, genius_qps, grace_qps)
-    _plot_three_on_axes(ax_bot, qsba_results, genius_qps, grace_qps)
+    handles = _plot_three_on_axes(ax_top, crest_results, genius_qps, grace_qps)
+    _plot_three_on_axes(ax_bot, crest_results, genius_qps, grace_qps)
 
     ax_top.set_ylim(80, 3200)
     ax_bot.set_ylim(0, 12)
@@ -427,7 +427,7 @@ def _plot_on_axes(
     ax,
     clip_results: List[dict],
     clip_sf_results: List[dict],
-    qsba_results: List[dict],
+    crest_results: List[dict],
     genius_qps: float,
     grace_qps: float,
 ) -> list:
@@ -517,9 +517,9 @@ def _plot_on_axes(
         )
     )
 
-    if qsba_results:
-        qn = np.array([r["N_k"] for r in qsba_results], dtype=float)
-        qq = np.array([r["qps"] for r in qsba_results], dtype=float)
+    if crest_results:
+        qn = np.array([r["N_k"] for r in crest_results], dtype=float)
+        qq = np.array([r["qps"] for r in crest_results], dtype=float)
         if len(qn) >= 4:
             n_smooth = np.linspace(qn.min(), qn.max(), 300)
             qps_smooth = np.clip(make_interp_spline(qn, qq, k=3)(n_smooth), 0, None)
@@ -533,7 +533,7 @@ def _plot_on_axes(
             )
         else:
             h, = ax.plot(
-                qn, qq, color=COLOR_OURS, linewidth=2.8, label="QSBA router+CE (VN, V100)", zorder=4
+                qn, qq, color=COLOR_OURS, linewidth=2.8, label="CREST router+CE (VN, V100)", zorder=4
             )
         handles.append(h)
         ax.scatter(qn, qq, color=COLOR_OURS, s=40, edgecolors="white", linewidths=0.5, zorder=5)
@@ -545,7 +545,7 @@ def _plot_on_axes(
 def plot_figure(
     clip_results: List[dict],
     clip_sf_results: List[dict],
-    qsba_results: List[dict],
+    crest_results: List[dict],
     genius_qps: float,
     grace_qps: float,
     out_path: Path,
@@ -569,9 +569,9 @@ def plot_figure(
     )
 
     handles = _plot_on_axes(
-        ax_top, clip_results, clip_sf_results, qsba_results, genius_qps, grace_qps
+        ax_top, clip_results, clip_sf_results, crest_results, genius_qps, grace_qps
     )
-    _plot_on_axes(ax_bot, clip_results, clip_sf_results, qsba_results, genius_qps, grace_qps)
+    _plot_on_axes(ax_bot, clip_results, clip_sf_results, crest_results, genius_qps, grace_qps)
 
     ax_top.set_ylim(Y_TOP_LO, Y_TOP_HI)
     ax_bot.set_ylim(Y_BOT_LO, Y_BOT_HI)
@@ -611,7 +611,7 @@ def _load_previous_clip() -> List[dict]:
 
 
 def run_three_methods(args: argparse.Namespace) -> None:
-    qsba_results = load_qsba_ce_results()
+    crest_results = load_crest_ce_results()
     genius_info = load_genius_vn()
     grace_info = load_grace_coco()
     genius_qps = genius_info["qps"]
@@ -631,7 +631,7 @@ def run_three_methods(args: argparse.Namespace) -> None:
     payload = {
         "dataset": "visualnews_task3",
         "methods": ["CREST+CE", "GENIUS", "GRACE"],
-        "qsba_ce": qsba_results,
+        "crest_ce": crest_results,
         "genius_info": genius_info,
         "grace_info": grace_info,
         "genius": horizontal_line(genius_qps, "VN measured"),
@@ -639,7 +639,7 @@ def run_three_methods(args: argparse.Namespace) -> None:
         "metadata": {
             "hardware": "V100",
             "batch": 1,
-            "qsba_source": str(RESULTS / "qps_vs_size_raw.json"),
+            "crest_source": str(RESULTS / "qps_vs_size_raw.json"),
             "genius_source": genius_info.get("source"),
             "grace_source": grace_info.get("source"),
             "grace_dataset": "coco",
@@ -650,11 +650,11 @@ def run_three_methods(args: argparse.Namespace) -> None:
     out_json.write_text(json.dumps(payload, indent=2))
     print(f"\nSaved: {out_json}", flush=True)
 
-    print_latency_table_three(qsba_results, genius_info, grace_info)
+    print_latency_table_three(crest_results, genius_info, grace_info)
 
     if not args.skip_plot:
         plot_figure_three(
-            qsba_results,
+            crest_results,
             genius_qps,
             grace_qps,
             RESULTS / "qps_vs_size_three_methods.png",
@@ -666,12 +666,12 @@ def main() -> None:
     parser.add_argument(
         "--with-clip",
         action="store_true",
-        help="Include CLIP/CLIP-SF sweep and full comparison plot (default: QSBA/GENIUS/GRACE only)",
+        help="Include CLIP/CLIP-SF sweep and full comparison plot (default: CREST/GENIUS/GRACE only)",
     )
     parser.add_argument(
-        "--refresh-qsba-only",
+        "--refresh-crest-only",
         action="store_true",
-        help="Skip CLIP sweep; reload QSBA from qps_vs_size_raw.json and replot",
+        help="Skip CLIP sweep; reload CREST from qps_vs_size_raw.json and replot",
     )
     parser.add_argument("--skip-plot", action="store_true", help="Only write JSON, no figure")
     args = parser.parse_args()
@@ -683,11 +683,11 @@ def main() -> None:
         run_three_methods(args)
         return
 
-    if args.refresh_qsba_only:
+    if args.refresh_crest_only:
         prev = json.loads((RESULTS / "qps_vs_size_all_methods.json").read_text())
         clip_results = prev.get("clip", _load_previous_clip())
         clip_sf_results = prev.get("clip_sf", clip_results)
-        qsba_results = load_qsba_ce_results()
+        crest_results = load_crest_ce_results()
         genius_info = load_genius_vn()
         grace_info = load_grace_coco()
         genius_qps = genius_info["qps"]
@@ -699,7 +699,7 @@ def main() -> None:
             "clip_sf": clip_sf_results,
             "genius": genius_results,
             "genius_info": genius_info,
-            "qsba_ce": qsba_results,
+            "crest_ce": crest_results,
             "grace": grace_results,
             "grace_info": grace_info,
             "genius_orig": {"qps": GENIUS_PAPER_QPS, "note": "Kim et al. RTX3090"},
@@ -707,19 +707,19 @@ def main() -> None:
             "metadata": {
                 "hardware": "V100",
                 "batch": 1,
-                "qsba_source": str(RESULTS / "qps_vs_size_raw.json"),
-                "qsba_refreshed": True,
+                "crest_source": str(RESULTS / "qps_vs_size_raw.json"),
+                "crest_refreshed": True,
             },
         }
         out_json = RESULTS / "qps_vs_size_all_methods.json"
         out_json.write_text(json.dumps(payload, indent=2))
         print(f"\nSaved: {out_json}", flush=True)
-        print_latency_table(clip_results, clip_sf_results, qsba_results, genius_info, grace_info)
+        print_latency_table(clip_results, clip_sf_results, crest_results, genius_info, grace_info)
         if not args.skip_plot:
             plot_figure(
                 clip_results,
                 clip_sf_results,
-                qsba_results,
+                crest_results,
                 genius_qps,
                 grace_qps,
                 RESULTS / "qps_vs_size_all_methods.png",
@@ -747,7 +747,7 @@ def main() -> None:
     )
     genius_results = horizontal_line(genius_qps, "VN measured")
 
-    qsba_results = load_qsba_ce_results()
+    crest_results = load_crest_ce_results()
 
     grace_info = load_grace_coco()
     grace_qps = grace_info["qps"]
@@ -764,7 +764,7 @@ def main() -> None:
         "clip_sf": clip_sf_results,
         "genius": genius_results,
         "genius_info": genius_info,
-        "qsba_ce": qsba_results,
+        "crest_ce": crest_results,
         "grace": grace_results,
         "grace_info": grace_info,
         "genius_orig": {"qps": GENIUS_PAPER_QPS, "note": "Kim et al. RTX3090"},
@@ -777,7 +777,7 @@ def main() -> None:
             "pool": "VN task3 text pool (image queries)",
             "pool_path": str(DATA["visualnews_task3"] / "text_embeddings.pt"),
             "query_path": str(DATA["visualnews_task3"] / "image_embeddings.pt"),
-            "qsba_source": str(RESULTS / "qps_vs_size_raw.json"),
+            "crest_source": str(RESULTS / "qps_vs_size_raw.json"),
             "genius_source": genius_info.get("source"),
             "grace_source": grace_info.get("source"),
             "grace_dataset": "coco",
@@ -790,12 +790,12 @@ def main() -> None:
     out_json.write_text(json.dumps(payload, indent=2))
     print(f"\nSaved: {out_json}", flush=True)
 
-    print_latency_table(clip_results, clip_sf_results, qsba_results, genius_info, grace_info)
+    print_latency_table(clip_results, clip_sf_results, crest_results, genius_info, grace_info)
 
     plot_figure(
         clip_results,
         clip_sf_results,
-        qsba_results,
+        crest_results,
         genius_qps,
         grace_qps,
         RESULTS / "qps_vs_size_all_methods.png",

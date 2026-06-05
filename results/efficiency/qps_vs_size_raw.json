@@ -6,8 +6,8 @@
     "warmup": 50,
     "n_measure": 300,
     "n_trials": 3,
-    "query_source": "/sda/yxyang/qsba_workspace/mbeir_aligned/data/visualnews_task3/image_embeddings.pt",
-    "pool_source": "/sda/yxyang/qsba_workspace/mbeir_aligned/data/visualnews_task3/text_embeddings.pt",
+    "query_source": "/sda/yxyang/crest_workspace/mbeir_aligned/data/visualnews_task3/image_embeddings.pt",
+    "pool_source": "/sda/yxyang/crest_workspace/mbeir_aligned/data/visualnews_task3/text_embeddings.pt",
     "formula": "|C| = B * N * M / K"
   },
   "results": {

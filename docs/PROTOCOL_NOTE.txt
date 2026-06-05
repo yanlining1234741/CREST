@@ -9,7 +9,7 @@
 这些实验结果 (cross_encoder/, ce_ablation/) 不能直接 vs GENIUS。
 保留作为开发记录。
 
-新的 M-BEIR 对齐实验在: /sda/yxyang/qsba_workspace/mbeir_aligned/
+新的 M-BEIR 对齐实验在: /sda/yxyang/crest_workspace/mbeir_aligned/
 使用 GENIUS 官方编码 embedding:
   /sdd/web3bench-500g/lnyan/projects/GENIUS-CVPR25/extracted_embed/CLIP_SF/
   /sdd/web3bench-500g/lnyan/projects/GENIUS-CVPR25/gen_code/.../

@@ -14,7 +14,7 @@
       "router_recall@1": 0.9459067273973155,
       "R@1": 0.5290418799629166,
       "R@5": 0.7708895965173929,
-      "checkpoint": "/sda/yxyang/qsba_workspace/lnyan-experiment/work/router_arch_L1_h512.pt"
+      "checkpoint": "/sda/yxyang/crest_workspace/lnyan-experiment/work/router_arch_L1_h512.pt"
     },
     {
       "config": {
@@ -26,7 +26,7 @@
       "router_recall@1": 0.9596920472409206,
       "R@1": 0.5348059172074651,
       "R@5": 0.7812084324237172,
-      "checkpoint": "/sda/yxyang/qsba_workspace/lnyan-experiment/work/router_arch_L2_h256.pt"
+      "checkpoint": "/sda/yxyang/crest_workspace/lnyan-experiment/work/router_arch_L2_h256.pt"
     },
     {
       "config": {
@@ -38,7 +38,7 @@
       "router_recall@1": 0.9611431335402475,
       "R@1": 0.5360957716957556,
       "R@5": 0.7824579789592486,
-      "checkpoint": "/sda/yxyang/qsba_workspace/lnyan-experiment/work/router_arch_L2_h512.pt"
+      "checkpoint": "/sda/yxyang/crest_workspace/lnyan-experiment/work/router_arch_L2_h512.pt"
     },
     {
       "config": {
@@ -50,7 +50,7 @@
       "router_recall@1": 0.9686404127534363,
       "R@1": 0.5387560965778548,
       "R@5": 0.7872949332903382,
-      "checkpoint": "/sda/yxyang/qsba_workspace/lnyan-experiment/work/router_arch_L2_h1024.pt"
+      "checkpoint": "/sda/yxyang/crest_workspace/lnyan-experiment/work/router_arch_L2_h1024.pt"
     }
   ]
 }

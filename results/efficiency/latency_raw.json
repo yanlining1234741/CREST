@@ -4,7 +4,7 @@
     "warmup": 50,
     "n_measure": 500,
     "batch32": 32,
-    "mbeir_root": "/sda/yxyang/qsba_workspace/mbeir_aligned"
+    "mbeir_root": "/sda/yxyang/crest_workspace/mbeir_aligned"
   },
   "flickr": {
     "corpus_size": 1000,
@@ -17,7 +17,7 @@
       "n": 500,
       "batch32_qps": 65638.3315
     },
-    "qsba_router": {
+    "crest_router": {
       "mean_ms": 0.1496,
       "std_ms": 0.0097,
       "p50_ms": 0.1454,
@@ -26,7 +26,7 @@
       "n": 500,
       "batch32_qps": 113468.7357
     },
-    "qsba_router_ce": {
+    "crest_router_ce": {
       "mean_ms": 1.1793,
       "std_ms": 0.1024,
       "p50_ms": 1.1853,
@@ -78,7 +78,7 @@
       "n": 500,
       "batch32_qps": 21454.6228
     },
-    "qsba_router": {
+    "crest_router": {
       "mean_ms": 0.1513,
       "std_ms": 0.0102,
       "p50_ms": 0.1505,
@@ -87,7 +87,7 @@
       "n": 500,
       "batch32_qps": 135482.9952
     },
-    "qsba_router_ce": {
+    "crest_router_ce": {
       "mean_ms": 1.4182,
       "std_ms": 0.3174,
       "p50_ms": 1.3338,
@@ -139,7 +139,7 @@
       "n": 500,
       "batch32_qps": 3150.5689
     },
-    "qsba_router": {
+    "crest_router": {
       "mean_ms": 0.1503,
       "std_ms": 0.011,
       "p50_ms": 0.1464,
@@ -148,7 +148,7 @@
       "n": 500,
       "batch32_qps": 124300.8076
     },
-    "qsba_router_ce": {
+    "crest_router_ce": {
       "mean_ms": 12.1081,
       "std_ms": 4.9118,
       "p50_ms": 11.1258,

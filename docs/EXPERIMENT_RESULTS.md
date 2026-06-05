@@ -1,8 +1,8 @@
-# QSBA 实验结果与配置手册
+# CREST 实验结果与配置手册
 
 > **更新日期:** 2026-05-26  
-> **汇总来源:** `qsba/_all_eval_results.txt`（243 runs）、各 `outputs_*/eval_correct.json`、Table 3 α sweep（`outputs_table3_alpha*_K32_M6`）  
-> **论文草稿:** `../qsba_aaai.tex`
+> **汇总来源:** `crest/_all_eval_results.txt`（243 runs）、各 `outputs_*/eval_correct.json`、Table 3 α sweep（`outputs_table3_alpha*_K32_M6`）  
+> **论文草稿:** `../crest_cvpr.tex`
 
 ---
 
@@ -22,7 +22,7 @@
 
 ## 1. 方法简述
 
-**QSBA** = Query-Aware Sinkhorn Bucket Assignment，三阶段流水线：
+**CREST** = Query-Aware Sinkhorn Bucket Assignment，三阶段流水线：
 
 | 阶段 | 脚本 | 输入 | 输出 | 作用 |
 |------|------|------|------|------|
@@ -144,13 +144,13 @@ router:
 | GRACE † | 73.5 | 46.8 | full |
 | AVG † | 79.2 | 51.3 | full |
 | **GENIUS †** | **84.1** | **58.1** | full |
-| **QSBA B=1** | **79.4** | **55.2** | **934 / 4979** |
-| QSBA B=3 | 79.5 | 55.2 | 1000 / 5000 |
-| QSBA B=5 | 79.5 | 55.2 | 1000 / 5000 |
+| **CREST B=1** | **79.4** | **55.2** | **934 / 4979** |
+| CREST B=3 | 79.5 | 55.2 | 1000 / 5000 |
+| CREST B=5 | 79.5 | 55.2 | 1000 / 5000 |
 
 † 来自原论文，非本仓库重跑。
 
-### 4.2 QSBA 完整指标（JSON 实测）
+### 4.2 CREST 完整指标（JSON 实测）
 
 #### Flickr — `outputs_flickr2_K16_M12`
 
@@ -181,10 +181,10 @@ router:
 |--------|---------|-------------------|
 | Dense CLIP | Flickr30K | 1,000 |
 | Dense CLIP | MS-COCO | 5,000 |
-| QSBA B=1 | Flickr30K (K=16,M=12) | **934** |
-| QSBA B=1 | MS-COCO (K=32,M=18) | **4,979** |
-| QSBA B=1 | Merged (K=128,M=8) | **2,728** |
-| QSBA B=1 | Visual News (K=64,M=4) | **38,035** |
+| CREST B=1 | Flickr30K (K=16,M=12) | **934** |
+| CREST B=1 | MS-COCO (K=32,M=18) | **4,979** |
+| CREST B=1 | Merged (K=128,M=8) | **2,728** |
+| CREST B=1 | Visual News (K=64,M=4) | **38,035** |
 
 对应 run: `flickr2_K16_M12`, `extra2_K32_M18`, `merged_K128_M8`, `visualnews_K64_M4`。
 
@@ -257,14 +257,14 @@ Router R@1 / R@1 / candidates@B=1：
 
 **COCO 次优参考:** `extra2_K48_M18` R@1=0.5511, cand=**4125**（若论文需更低候选可引用）。
 
-**全库扫描:** `grep BEST qsba/_all_eval_results.txt`（文件末尾注释行）。
+**全库扫描:** `grep BEST crest/_all_eval_results.txt`（文件末尾注释行）。
 
 ---
 
 ## 8. 复现命令
 
 ```bash
-cd qsba
+cd CREST
 
 # 单 run 端到端（示例：COCO 最佳配置）
 CONFIG=outputs_extra2_K32_M18/config.yaml
@@ -300,7 +300,7 @@ python scripts/generate_paper_figures.py
 
 ```bash
 # 若存在生成脚本；否则直接查看：
-cat qsba/_all_eval_results.txt
+cat crest/_all_eval_results.txt
 ```
 
 ---

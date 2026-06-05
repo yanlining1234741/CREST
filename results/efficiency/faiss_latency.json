@@ -18,8 +18,8 @@
   "note_index_build": "train+add on CPU + GPU transfer; excluded from per-query latency",
   "warmup": 50,
   "n_measure": 500,
-  "pool_source": "/sda/yxyang/qsba_workspace/mbeir_aligned/data/visualnews_task3/image_embeddings.pt",
-  "query_source": "/sda/yxyang/qsba_workspace/mbeir_aligned/data/visualnews_task3/text_embeddings.pt",
+  "pool_source": "/sda/yxyang/crest_workspace/mbeir_aligned/data/visualnews_task3/image_embeddings.pt",
+  "query_source": "/sda/yxyang/crest_workspace/mbeir_aligned/data/visualnews_task3/text_embeddings.pt",
   "sweep_dataset_size_k": [
     {
       "N_k": 50,

@@ -2,8 +2,6 @@
 
 **CREST: Collapse-Free Routing with Equipartitioned Semantic Buckets for Cross-Modal Retrieval**
 
-Legacy internal name during development: QSBA (Query-Aware Sinkhorn Bucket Assignment).
-
 跨模态检索中的**共享语义桶分配**实验框架。目标:把 N 个 item 分配到 K 个桶,
 使得 query 能准确路由到目标 item 所在的桶,且粒度尽可能细。
 
@@ -34,7 +32,7 @@ Legacy internal name during development: QSBA (Query-Aware Sinkhorn Bucket Assig
 ## 二、目录结构
 
 ```
-qsba/
+crest/
 ├── README.md                          # 本文件
 ├── configs/
 │   └── coco_siglip2.yaml              # 默认配置

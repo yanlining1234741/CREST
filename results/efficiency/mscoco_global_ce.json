@@ -3,7 +3,7 @@
   "K": 128,
   "M": 8,
   "protocol": "MS-COCO 5K pool, multi-target queries",
-  "ce_checkpoint": "/sda/yxyang/qsba_workspace/mbeir_aligned/cross_encoder/mscoco_K128_M8/cross_encoder.pt (legacy hn=0.7)",
+  "ce_checkpoint": "/sda/yxyang/crest_workspace/mbeir_aligned/cross_encoder/mscoco_K128_M8/cross_encoder.pt (legacy hn=0.7)",
   "clip_dense": {
     "method": "clip_dense_exhaustive",
     "pool_size": 5000,
@@ -13,7 +13,7 @@
     "recall@5": 0.8069652142367689,
     "recall@10": 0.883711556290056
   },
-  "qsba_flat": {
+  "crest_flat": {
     "router_recall@1": 0.9638437663751058,
     "candidates@B=1": 442.080817445282,
     "recall@1|B=1": 0.5363779273650692,
@@ -34,7 +34,7 @@
     "multi_target": true,
     "rerank_mode": "flat"
   },
-  "qsba_ce": {
+  "crest_ce": {
     "router_recall@1": 0.9638437663751058,
     "candidates@B=1": 442.080817445282,
     "recall@1|B=1": 0.5223507598049095,

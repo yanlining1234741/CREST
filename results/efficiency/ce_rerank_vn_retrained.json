@@ -18,8 +18,8 @@
     "R@10": 6.0
   },
   "best_dev_R@1": 0.4083,
-  "eval_curve": "/sda/yxyang/qsba_workspace/lnyan-experiment/work/ce_vn_retrain/eval_curve.json",
-  "checkpoint": "/sda/yxyang/qsba_workspace/lnyan-experiment/work/ce_vn_retrain/checkpoints/best_ce.pt",
+  "eval_curve": "/sda/yxyang/crest_workspace/lnyan-experiment/work/ce_vn_retrain/eval_curve.json",
+  "checkpoint": "/sda/yxyang/crest_workspace/lnyan-experiment/work/ce_vn_retrain/checkpoints/best_ce.pt",
   "smoke_test": true,
   "eval_only": true
 }
