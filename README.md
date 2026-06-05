@@ -48,8 +48,8 @@ See **[REPRODUCE.md](REPRODUCE.md)** for full commands and **[docs/CREST_RESULTS
 @inproceedings{crest2025,
   title     = {CREST: Collapse-Free Routing with Equipartitioned Semantic Buckets for Cross-Modal Retrieval},
   author    = {...},
-  booktitle = {CVPR},
-  year      = {2025}
+  booktitle = {},
+  year      = {2026}
 }
 ```
 

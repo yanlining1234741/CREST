@@ -16,8 +16,8 @@
 ```bash
 cd /sda/yxyang/qsba_workspace/CREST-github
 
-git config user.name "Your Name"
-git config user.email "your_email@example.com"
+git config user.name "yanlining1234741"
+git config user.email "1234741@wku.edu.cn"
 
 export CREST_DATA_ROOT=/sda/yxyang/qsba_workspace/mbeir_aligned
 python scripts/setup_mbeir_configs.py
@@ -31,7 +31,7 @@ git commit -m "CREST: official release with reproduction guide and results"
 
 ```bash
 git branch -M main
-git remote add origin https://github.com/YOUR_USER/CREST.git
+git remote add origin https://github.com/yanlining1234741/CREST.git
 git push -u origin main
 ```
 
@@ -40,7 +40,7 @@ HTTPS 推送时 Password 填 **Personal Access Token**（`repo` 权限）。
 SSH：
 
 ```bash
-git remote set-url origin git@github.com:YOUR_USER/CREST.git
+git remote set-url origin git@github.com:yanlining1234741/CREST.git
 git push -u origin main
 ```
 
