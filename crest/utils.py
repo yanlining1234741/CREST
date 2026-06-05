@@ -28,7 +28,7 @@ def load_config(config_path: str) -> Dict[str, Any]:
     return cfg
 
 
-def setup_logger(name: str = "qsba", level: str = "INFO",
+def setup_logger(name: str = "crest", level: str = "INFO",
                  log_file: str = None) -> logging.Logger:
     """设置 logger,可同时输出到 console 和文件。"""
     logger = logging.getLogger(name)

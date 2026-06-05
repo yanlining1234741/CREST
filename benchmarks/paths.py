@@ -22,8 +22,7 @@ def _data_root() -> Path:
 MBEIR = _data_root()
 
 CREST_ROOT = REPO_ROOT
-# Legacy alias used by benchmark scripts
-QSBA = CREST_ROOT
+QSBA = CREST_ROOT  # legacy alias in benchmark scripts
 
 DATA = {
     "flickr": MBEIR / "data" / "flickr",

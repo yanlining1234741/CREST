@@ -1,24 +1,17 @@
-# Data layout (not included in git)
+# Data
 
-CREST expects **pre-extracted CLIP-SF (768-d) embeddings** aligned with the **M-BEIR / GENIUS** evaluation protocol.
+Embeddings are **not** included in this repository (~9–15 GB).
 
-## Directory structure
+See **[docs/DATA.md](../docs/DATA.md)** for:
 
-Place data under `CREST_DATA_ROOT` (default: sibling folder `../mbeir_aligned`):
+- Downloading `CREST-data-critical-*.tar.gz`
+- Directory layout under `$CREST_DATA_ROOT`
+- M-BEIR evaluation protocol slices
 
-```
-mbeir_aligned/
-├── data/
-│   ├── flickr/
-│   ├── mscoco/
-│   └── visualnews_task3/
-├── outputs/
-└── cross_encoder/
-```
-
-## Generate configs after data is ready
+After data is ready:
 
 ```bash
 export CREST_DATA_ROOT=/path/to/mbeir_aligned
-python scripts/setup_mbeir_configs.py
+python run.py setup
+python run.py verify --dataset flickr
 ```

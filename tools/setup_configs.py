@@ -10,7 +10,7 @@ import yaml
 
 REPO = Path(__file__).resolve().parent.parent
 TEMPLATES = {
-    "flickr_mbeir.yaml": {
+    "flickr.yaml": {
         "data": {
             "image_emb_path": "{root}/data/flickr/image_embeddings.pt",
             "text_emb_path": "{root}/data/flickr/image_embeddings.pt",
@@ -48,7 +48,7 @@ TEMPLATES = {
         "log_level": "INFO",
         "output_dir": "{root}/outputs/flickr",
     },
-    "mscoco_mbeir.yaml": {
+    "mscoco.yaml": {
         "data": {
             "image_emb_path": "{root}/data/mscoco/image_embeddings.pt",
             "text_emb_path": "{root}/data/mscoco/text_embeddings.pt",
@@ -86,7 +86,7 @@ TEMPLATES = {
         "log_level": "INFO",
         "output_dir": "{root}/outputs/mscoco",
     },
-    "vn_task3.yaml": {
+    "visualnews_task3.yaml": {
         "data": {
             "image_emb_path": "{root}/data/visualnews_task3/image_embeddings.pt",
             "text_emb_path": "{root}/data/visualnews_task3/text_embeddings.pt",
@@ -147,7 +147,7 @@ def main() -> None:
     )
     args = p.parse_args()
     root = str(Path(args.data_root).resolve())
-    out_dir = REPO / "configs"
+    out_dir = REPO / "configs" / "datasets"
     out_dir.mkdir(parents=True, exist_ok=True)
     for name, tpl in TEMPLATES.items():
         cfg = _fill(tpl, root)

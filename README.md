@@ -2,45 +2,70 @@
 
 **CREST: Collapse-Free Routing with Equipartitioned Semantic Buckets for Cross-Modal Retrieval**
 
-Official implementation of **CREST** — scalable cross-modal retrieval via query-aware semantic buckets, Sinkhorn equipartitioned assignment, learned routing, and cross-encoder reranking.
-
-Paper results use **M-BEIR / GENIUS-aligned** CLIP-SF embeddings (768-d) on Flickr30K, MS-COCO, and Visual News.
-
-## Repository layout
-
-```
-CREST-github/
-├── src/                 # Core: query_aware, sinkhorn, router, cross_encoder
-├── scripts/             # Training & evaluation pipeline
-├── configs/             # Dataset YAML (run setup_mbeir_configs.py first)
-├── tests/
-├── benchmarks/          # QPS vs corpus size (VN), efficiency plots
-├── docs/                # Paper tables & protocol notes
-├── results/
-│   ├── paper/           # Published eval JSON
-│   └── efficiency/      # Latency / QPS artifacts
-├── data/README.md       # How to obtain embeddings (not shipped)
-├── REPRODUCE.md         # Step-by-step reproduction
-└── requirements.txt
-```
+Official PyTorch implementation for scalable text-to-image retrieval via query-aware semantic buckets, Sinkhorn equipartitioned assignment, learned routing, and cross-encoder reranking.
 
 ## Quick start
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/CREST.git
-cd CREST
 pip install -r requirements.txt
 export PYTHONPATH="$(pwd):$PYTHONPATH"
-
-# Point to M-BEIR data root, then generate configs
 export CREST_DATA_ROOT=/path/to/mbeir_aligned
-python scripts/setup_mbeir_configs.py
 
-# Run Flickr pipeline
-bash scripts/run_mbeir_ce_pipeline.sh flickr
+python run.py setup
+python run.py verify --dataset flickr
+python run.py train --dataset flickr          # full 6-stage pipeline
+python tools/check_results.py --dataset flickr  # compare R@1 vs paper
 ```
 
-See **[REPRODUCE.md](REPRODUCE.md)** for full commands and **[docs/CREST_RESULTS_CE.md](docs/CREST_RESULTS_CE.md)** for reported metrics.
+## Repository structure
+
+```
+CREST/
+├── run.py                 # Top-level CLI (setup / train / verify / benchmark)
+├── crest/                 # Core library
+│   ├── query_aware.py     # Stage 1
+│   ├── sinkhorn.py        # Stage 2 — equipartitioned assignment
+│   ├── router.py          # Stage 3 — collapse-free routing
+│   ├── cross_encoder.py   # Stage 4 — reranking
+│   ├── evaluate.py        # Stage 5 — metrics
+│   ├── datasets.py        # Paper hyperparameters (K, M per dataset)
+│   └── paths.py           # CREST_DATA_ROOT resolution
+├── stages/
+│   ├── pipeline.py        # 6-stage orchestrator
+│   └── README.md
+├── scripts/               # Stage implementation scripts (called by pipeline)
+├── configs/datasets/      # Generated YAML configs
+├── tools/
+│   ├── setup_configs.py
+│   ├── check_results.py
+│   └── experimental/      # Ablations & legacy variants
+├── benchmarks/            # VN QPS vs corpus size
+├── docs/                  # Full documentation
+│   ├── INSTALL.md
+│   ├── DATA.md            # How to obtain embeddings
+│   ├── PIPELINE.md        # Stage-by-stage guide
+│   └── RESULTS.md         # Expected metrics
+├── tests/
+└── results/               # Published JSON & figures
+```
+
+## Documentation
+
+| Doc | Description |
+|-----|-------------|
+| [docs/INSTALL.md](docs/INSTALL.md) | Environment setup |
+| [docs/DATA.md](docs/DATA.md) | Download / prepare embeddings |
+| [docs/PIPELINE.md](docs/PIPELINE.md) | Train & evaluate (6 stages) |
+| [docs/RESULTS.md](docs/RESULTS.md) | Expected numbers & verification |
+| [docs/CREST_RESULTS_CE.md](docs/CREST_RESULTS_CE.md) | Full paper tables |
+
+## Paper results (reference)
+
+| Dataset | K | M | R@1 (CE, B=1) |
+|---------|---|---|---------------|
+| Flickr30K | 64 | 8 | 77.98% |
+| MS-COCO | 128 | 8 | 53.65% |
+| Visual News | 512 | 6 | 19.59% |
 
 ## Citation
 
@@ -48,11 +73,11 @@ See **[REPRODUCE.md](REPRODUCE.md)** for full commands and **[docs/CREST_RESULTS
 @inproceedings{crest2026,
   title     = {CREST: Collapse-Free Routing with Equipartitioned Semantic Buckets for Cross-Modal Retrieval},
   author    = {...},
-  booktitle = {},
-  year      = {2026}
+  booktitle = {CVPR},
+  year      = {2025}
 }
 ```
 
 ## License
 
-See [LICENSE](LICENSE).
+MIT — see [LICENSE](LICENSE).
