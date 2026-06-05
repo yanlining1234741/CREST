@@ -45,7 +45,7 @@ See **[REPRODUCE.md](REPRODUCE.md)** for full commands and **[docs/CREST_RESULTS
 ## Citation
 
 ```bibtex
-@inproceedings{crest2025,
+@inproceedings{crest2026,
   title     = {CREST: Collapse-Free Routing with Equipartitioned Semantic Buckets for Cross-Modal Retrieval},
   author    = {...},
   booktitle = {},
