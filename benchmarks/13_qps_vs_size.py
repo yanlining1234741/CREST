@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Measure QSBA throughput (QPS) vs simulated corpus size |C| = B*N*M/K."""
+"""Measure CREST throughput (QPS) vs simulated corpus size |C| = B*N*M/K."""
 from __future__ import annotations
 
 import json
@@ -174,7 +174,7 @@ def main() -> None:
         raise RuntimeError("CUDA required for QPS benchmark (cuda.Event timing).")
 
     device = torch.device("cuda")
-    print(f"QSBA_ROOT={QSBA}", flush=True)
+    print(f"CREST_ROOT={QSBA}", flush=True)
     print(f"Device: {device}", flush=True)
 
     query_emb, pool_emb = load_embeddings()

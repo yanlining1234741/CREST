@@ -1,4 +1,4 @@
-"""Paths for efficiency benchmarks (relative to QSBA-github repo)."""
+"""Paths for efficiency benchmarks (relative to CREST-github repo)."""
 from __future__ import annotations
 
 import os
@@ -11,9 +11,19 @@ WORK = REPO_ROOT / "benchmarks" / "work"
 
 # M-BEIR data root: sibling folder or env override
 _data_default = REPO_ROOT.parent / "mbeir_aligned"
-MBEIR = Path(os.environ.get("QSBA_DATA_ROOT", _data_default))
+def _data_root() -> Path:
+    for key in ("CREST_DATA_ROOT", "QSBA_DATA_ROOT"):
+        v = os.environ.get(key)
+        if v:
+            return Path(v)
+    return _data_default
 
-QSBA = REPO_ROOT
+
+MBEIR = _data_root()
+
+CREST_ROOT = REPO_ROOT
+# Legacy alias used by benchmark scripts
+QSBA = CREST_ROOT
 
 DATA = {
     "flickr": MBEIR / "data" / "flickr",
@@ -33,8 +43,9 @@ CE = {
     "visualnews_task3": MBEIR / "cross_encoder" / "vn_task3_K512_M6",
 }
 
-QSBA_CONFIG = {
-    "flickr": QSBA / "configs" / "flickr_mbeir.yaml",
-    "mscoco": QSBA / "configs" / "mscoco_mbeir.yaml",
-    "visualnews_task3": QSBA / "configs" / "vn_task3.yaml",
+CREST_CONFIG = {
+    "flickr": CREST_ROOT / "configs" / "flickr_mbeir.yaml",
+    "mscoco": CREST_ROOT / "configs" / "mscoco_mbeir.yaml",
+    "visualnews_task3": CREST_ROOT / "configs" / "vn_task3.yaml",
 }
+QSBA_CONFIG = CREST_CONFIG

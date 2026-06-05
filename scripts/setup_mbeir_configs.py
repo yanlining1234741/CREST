@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Write M-BEIR config YAMLs with portable paths from QSBA_DATA_ROOT."""
+"""Write M-BEIR config YAMLs with portable paths from CREST_DATA_ROOT."""
 from __future__ import annotations
 
 import argparse
@@ -139,7 +139,10 @@ def main() -> None:
     p = argparse.ArgumentParser()
     p.add_argument(
         "--data-root",
-        default=os.environ.get("QSBA_DATA_ROOT", str(REPO.parent / "mbeir_aligned")),
+        default=os.environ.get(
+            "CREST_DATA_ROOT",
+            os.environ.get("QSBA_DATA_ROOT", str(REPO.parent / "mbeir_aligned")),
+        ),
         help="M-BEIR aligned data directory (embeddings + outputs)",
     )
     args = p.parse_args()
@@ -151,7 +154,7 @@ def main() -> None:
         path = out_dir / name
         path.write_text(yaml.dump(cfg, default_flow_style=False, allow_unicode=True))
         print(f"Wrote {path}")
-    print(f"\nSet: export QSBA_DATA_ROOT={root}")
+    print(f"\nSet: export CREST_DATA_ROOT={root}")
 
 
 if __name__ == "__main__":

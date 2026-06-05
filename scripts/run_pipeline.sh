@@ -13,7 +13,7 @@ ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 cd "$ROOT"
 
 echo "========================================="
-echo "QSBA Pipeline"
+echo "CREST Pipeline"
 echo "Config: $CONFIG"
 echo "Working dir: $ROOT"
 echo "========================================="

@@ -192,7 +192,7 @@ def load_qsba_ce_results() -> List[dict]:
         )
     n_trials = raw.get("meta", {}).get("n_trials", 1)
     print(
-        f"\n[QSBA router+CE] loaded {len(out)} points from {path.name} "
+        f"\n[CREST router+CE] loaded {len(out)} points from {path.name} "
         f"(n_trials={n_trials})",
         flush=True,
     )
@@ -237,14 +237,14 @@ def print_latency_table_three(
 
     lines = []
     lines.append("=" * 100)
-    lines.append("Latency table — QSBA / GENIUS / GRACE (batch=1, V100)")
-    lines.append("QSBA+GENIUS: VN task3 sweep | GRACE: COCO (horizontal, N-independent)")
+    lines.append("Latency table — CREST / GENIUS / GRACE (batch=1, V100)")
+    lines.append("CREST+GENIUS: VN task3 sweep | GRACE: COCO (horizontal, N-independent)")
     lines.append("=" * 100)
     header = f"{'Method':<22}" + "".join(f"{c:>14}" for c in cols)
     lines.append(header)
     lines.append("-" * len(header))
     lines.append(
-        f"{'QSBA+CE (VN)':<22}" + "".join(f"{c:>14}" for c in row_cells(qsba_results))
+        f"{'CREST+CE (VN)':<22}" + "".join(f"{c:>14}" for c in row_cells(qsba_results))
     )
     lines.append(
         f"{'GENIUS (VN)':<22}"
@@ -295,7 +295,7 @@ def print_latency_table(
     for name, rows in (
         ("CLIP (VN)", clip_results),
         ("CLIP-SF (VN)", clip_sf_results),
-        ("QSBA+CE (VN)", qsba_results),
+        ("CREST+CE (VN)", qsba_results),
     ):
         lines.append(f"{name:<22}" + "".join(f"{c:>14}" for c in row_cells(rows)))
 
@@ -355,7 +355,7 @@ def _plot_three_on_axes(
                 qps_smooth,
                 color=COLOR_OURS,
                 linewidth=2.8,
-                label="QSBA router+CE (VN, V100)",
+                label="CREST router+CE (VN, V100)",
                 zorder=4,
             )
         else:
@@ -528,7 +528,7 @@ def _plot_on_axes(
                 qps_smooth,
                 color=COLOR_OURS,
                 linewidth=2.8,
-                label="QSBA router+CE (VN, V100)",
+                label="CREST router+CE (VN, V100)",
                 zorder=4,
             )
         else:
@@ -630,7 +630,7 @@ def run_three_methods(args: argparse.Namespace) -> None:
 
     payload = {
         "dataset": "visualnews_task3",
-        "methods": ["QSBA+CE", "GENIUS", "GRACE"],
+        "methods": ["CREST+CE", "GENIUS", "GRACE"],
         "qsba_ce": qsba_results,
         "genius_info": genius_info,
         "grace_info": grace_info,
@@ -679,7 +679,7 @@ def main() -> None:
     RESULTS.mkdir(parents=True, exist_ok=True)
 
     if not args.with_clip:
-        print("=== VN task3 — QSBA / GENIUS / GRACE ===", flush=True)
+        print("=== VN task3 — CREST / GENIUS / GRACE ===", flush=True)
         run_three_methods(args)
         return
 

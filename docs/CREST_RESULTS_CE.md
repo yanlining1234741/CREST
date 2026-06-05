@@ -1,4 +1,6 @@
-# QSBA 论文结果表格（完整版，CE 为主 rerank）
+# CREST 论文结果表格（完整版，CE 为主 rerank）
+
+**CREST: Collapse-Free Routing with Equipartitioned Semantic Buckets for Cross-Modal Retrieval**
 
 > **生成日期：** 2026-05-28  
 > **核对日期：** 2026-05-28（由 Cursor 从 JSON 自动汇总）  

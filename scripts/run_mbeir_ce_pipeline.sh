@@ -1,8 +1,8 @@
 #!/bin/bash
-# Full QSBA + cross-encoder pipeline on M-BEIR aligned data (paper main setting).
+# Full CREST + cross-encoder pipeline on M-BEIR aligned data (paper main setting).
 #
 # Usage:
-#   export QSBA_DATA_ROOT=/path/to/mbeir_aligned
+#   export CREST_DATA_ROOT=/path/to/mbeir_aligned
 #   bash scripts/run_mbeir_ce_pipeline.sh flickr|mscoco|visualnews_task3
 #
 set -euo pipefail
@@ -25,7 +25,7 @@ fi
 
 export PYTHONPATH="$ROOT:${PYTHONPATH:-}"
 
-echo "=== QSBA M-BEIR pipeline: $TASK ==="
+echo "=== CREST M-BEIR pipeline: $TASK ==="
 bash scripts/run_pipeline.sh "$CONFIG"
 
 OUT_DIR=$(python -c "import yaml; print(yaml.safe_load(open('$CONFIG'))['output_dir'])")
